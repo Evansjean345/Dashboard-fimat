@@ -10,14 +10,14 @@ export default function AdminTable() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/order`)
+      .get(`https://fimat-group-api.onrender.com/order`)
       .then((item) => setData(item.data))
       .catch((error) => console.log(error));
   }, []);
 
   const handleUpdate = (id, newStatus) => {
     axios
-      .put(`http://localhost:4000/order/${id}`, {
+      .put(`https://fimat-group-api.onrender.com/order/${id}`, {
         status: newStatus,
         invoiceStatus: newStatus,
       })
@@ -32,7 +32,7 @@ export default function AdminTable() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:4000/order/${id}`)
+      .delete(`https://fimat-group-api.onrender.com/order/${id}`)
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
   };

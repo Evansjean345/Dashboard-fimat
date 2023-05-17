@@ -8,7 +8,7 @@ function UserSection() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/user`)
+      .get(`https://fimat-group-api.onrender.com/user`)
       .then((item) => setData(item.data))
       .catch((error) => console.log(error));
   }, []);

@@ -10,7 +10,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/order/${id}`)
+      .get(`https://fimat-group-api.onrender.com/order/${id}`)
       .then((res) => setOrder(res.data));
   }, [id]);
 

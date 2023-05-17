@@ -9,7 +9,7 @@ function Table() {
 
   useEffect(() => {
     function PerPage() {
-      fetch("http://localhost:4000/order/")
+      fetch("https://fimat-group-api.onrender.com/order/")
         .then((data) => data.json())
         .then((data) => setData(data))
         .catch((error) => setData(error));

@@ -7,7 +7,7 @@ export default function SearchBar() {
 
   useEffect(() => {
     const fetchOrder = () => {
-      fetch("http://localhost:4000/order")
+      fetch("https://fimat-group-api.onrender.com/order")
         .then((res) => res.json())
         .then((res) => setData(res));
     };

@@ -8,10 +8,10 @@ export default function PanelBlocs() {
   useEffect(() => {
     function fetchData() {
       const response1 = axios
-        .get("http://localhost:4000/order/")
+        .get("https://fimat-group-api.onrender.com/order/")
         .then((res) => setData1(res.data));
       const response2 = axios
-        .get("http://localhost:4000/user/")
+        .get("https://fimat-group-api.onrender.com/user/")
         .then((res) => setData2(res.data));
     }
 

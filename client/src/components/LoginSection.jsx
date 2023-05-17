@@ -16,7 +16,7 @@ export default function LoginSection() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/user/login",
+        "https://fimat-group-api.onrender.com/user/login",
         formData
       );
       const token = response.data.token;

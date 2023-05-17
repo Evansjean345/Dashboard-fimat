@@ -12,7 +12,7 @@ export default function Facturation() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/order/${id}`)
+      .get(`https://fimat-group-api.onrender.com/order/${id}`)
       .then((res) => setOrder(res.data));
   }, [id]);
 
@@ -22,7 +22,7 @@ export default function Facturation() {
       totalCost: totalCost,
     };
     axios
-      .put(`http://localhost:4000/order/${id}`, data)
+      .put(`https://fimat-group-api.onrender.com/order/${id}`, data)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };

@@ -78,7 +78,7 @@ export default function SignupSection() {
     setPassword("");
 
     axios
-      .post("http://localhost:4000/user/signup", formData)
+      .post("https://fimat-group-api.onrender.com/user/signup", formData)
       .then((res) => {
         console.log(res);
         handleOpen();

@@ -33,13 +33,13 @@ const AuthProvider = ({ children }) => {
 
 
   const getUserInfo = async () => {
-    const response = await fetch(`http://localhost:4000/user/${userId}`);
+    const response = await fetch(`https://fimat-group-api.onrender.com/user/${userId}`);
     const data = await response.json();
     return data;
   };
 
   const getOrderByUser = async () => {
-    const response = await fetch(`http://localhost:4000/user/${userId}/order`);
+    const response = await fetch(`https://fimat-group-api.onrender.com/user/${userId}/order`);
     const data = await response.json();
     return data;
   };

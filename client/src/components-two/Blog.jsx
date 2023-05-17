@@ -56,7 +56,7 @@ const Blog = () => {
     };
 
     axios
-      .put(`http://localhost:4000/user/${userInfo._id}`, data)
+      .put(`https://fimat-group-api.onrender.com/user/${userInfo._id}`, data)
       .then((res) => {
         handleOpen();
         console.log(res);
@@ -422,7 +422,7 @@ const Blog = () => {
         )}
       </Formik>
       {/* Action réussie */}
-      <Dialog open={open} handler={handleOpen}>
+      <Dialog open={open} handler={handleOpen} size="xl">
         <DialogHeader>Vos informations ont bien étées mise à jour</DialogHeader>
         <DialogFooter>
           <Button
@@ -438,7 +438,7 @@ const Blog = () => {
         </DialogFooter>
       </Dialog>
       {/* Action Annulée*/}
-      <Dialog open={error} handler={handleError}>
+      <Dialog open={error} handler={handleError} size="xl">
         <DialogHeader>Quelque chose s'est mal passée </DialogHeader>
         <DialogBody divider className="text-semibold">
           Peut être le Nom d'utilisateur , le numéro de téléphone ou l'email que

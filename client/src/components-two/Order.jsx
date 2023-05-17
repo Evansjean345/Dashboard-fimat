@@ -148,7 +148,7 @@ export default function Order() {
     console.log("formuser", user);
 
     axios
-      .post("http://localhost:4000/order/", formData)
+      .post("https://fimat-group-api.onrender.com/order/", formData)
       .then((res) => {
         console.log(res);
         handleOpen();
@@ -814,7 +814,7 @@ export default function Order() {
         </div>
       </div>
       {/* commande confirmée */}
-      <Dialog open={open} handler={handleOpen}>
+      <Dialog open={open} handler={handleOpen} size="xl">
         <DialogHeader>Votre commande a bien été enregistrée</DialogHeader>
         <DialogBody divider className="text-semibold">
           Merci pour votre confiance l'equipe Chapchrono vous remercie pour
@@ -834,7 +834,7 @@ export default function Order() {
         </DialogFooter>
       </Dialog>
       {/* commande refusée*/}
-      <Dialog open={error} handler={handleError}>
+      <Dialog open={error} handler={handleError} size="xl">
         <DialogHeader>Nous ne pouvons traitez votre commande</DialogHeader>
         <DialogBody divider className="text-semibold">
           Veuillez renseigner tous les champs avant de pouvoir passer une

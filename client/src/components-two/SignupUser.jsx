@@ -401,7 +401,7 @@ export default function SignupUser() {
         </div>
       </section>
       {/* commande confirmée */}
-      <Dialog open={open} handler={handleOpen}>
+      <Dialog open={open} handler={handleOpen} size="xl">
         <DialogHeader>Votre Compte a bien été crée avec succès</DialogHeader>
         <DialogBody divider className="text-semibold">
           Nous vous prions de cliquer sur le bouton-ci dessous afin que vous
@@ -420,7 +420,7 @@ export default function SignupUser() {
         </DialogFooter>
       </Dialog>
       {/* commande refusée*/}
-      <Dialog open={error} handler={handleError}>
+      <Dialog open={error} handler={handleError} size="xl">
         <DialogHeader>
           Veuillez remplir tous les champs pour créer un compte
         </DialogHeader>

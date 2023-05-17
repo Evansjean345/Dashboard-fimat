@@ -128,11 +128,10 @@ export default function LoginSection() {
                     />
                   </div>
 
-                  <div class="mt-6">
+                  <div class="mt-6" onClick={handleSubmit}>
                     <button
-                      type="submit"
-                      class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                    >
+                    type="submit"
+                     class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                       Se connceter
                     </button>
                   </div>
@@ -141,8 +140,9 @@ export default function LoginSection() {
                 <p class="mt-6 text-sm text-center text-gray-400">
                   &#x27; Vous n'avez pas de compte{" "}
                   <Link
-                  to="/signup/user"
-                   class="text-[#db6013] focus:outline-none focus:underline hover:underline">
+                    to="/signup/user"
+                    class="text-[#db6013] focus:outline-none focus:underline hover:underline"
+                  >
                     S'enregistrer
                   </Link>
                   .

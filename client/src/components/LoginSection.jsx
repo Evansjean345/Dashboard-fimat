@@ -130,8 +130,9 @@ export default function LoginSection() {
 
                   <div class="mt-6" onClick={handleSubmit}>
                     <button
-                    type="submit"
-                     class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                      type="submit"
+                      class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                    >
                       Se connceter
                     </button>
                   </div>

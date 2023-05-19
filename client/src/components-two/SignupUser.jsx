@@ -32,7 +32,7 @@ export default function SignupUser() {
     setLoader(!loader);
     setTimeout(() => {
       setLoader(loader);
-    }, 6000);
+    }, 7000);
   };
 
   const navigate = useNavigate();
@@ -99,9 +99,9 @@ export default function SignupUser() {
         handleError();
       });
 
+      handleLoader();
     console.log(formData);
 
-    handleLoader();
   };
 
   return (
@@ -231,7 +231,7 @@ export default function SignupUser() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="lastname"
                       >
-                        Nom d'utilisateur
+                        Prénoms
                       </label>
                       <Field
                         type="text"

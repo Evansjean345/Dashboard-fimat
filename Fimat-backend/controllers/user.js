@@ -28,7 +28,7 @@ exports.signup = async (req, res) => {
       email: req.body.email,
       password: hash,
       imgUrl: file,
-      isAdmin: req.body.isAdmin ? true : false,
+      isAdmin: req.body.isAdmin === "true",
       date: new Date().toUTCString(),
     });
     admin

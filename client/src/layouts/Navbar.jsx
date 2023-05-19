@@ -237,7 +237,7 @@ export default function Navbar() {
             <p className="text-base text-start leading-4 border-b border-transparent ">
               {userInfo === null ? (
                 "chargement . . ."
-              ) : userInfo.isAdmin === true ? (
+              ) : userInfo.isAdmin === "true" ? (
                 <Link to="/dashboard/admin/all-order">
                   Repartition des commandes
                 </Link>
@@ -275,7 +275,7 @@ export default function Navbar() {
             <p className="text-base leading-4 border-b border-transparent  hover:border-white focus:border-white  ">
               {userInfo === null ? (
                 "chargement . . ."
-              ) : userInfo.isAdmin === true ? (
+              ) : userInfo.isAdmin === "true" ? (
                 <Link to="/dashboard/admin/all-user">Utilisateurs</Link>
               ) : (
                 <Link to="/dashboard/profile">Profile</Link>
@@ -285,7 +285,7 @@ export default function Navbar() {
           {/* Administration */}
           {userInfo === null ? (
             ""
-          ) : userInfo.isAdmin === true ? (
+          ) : userInfo.isAdmin === "true" ? (
             <button className="focus:outline-none focus:text-white  flex justify-start items-center space-x-6 bg-[#37145d] p-1 text-indigo-200 hover:text-white rounded-xl  py-3    w-full ">
               <svg
                 width={24}

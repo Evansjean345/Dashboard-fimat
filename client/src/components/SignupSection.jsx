@@ -24,7 +24,7 @@ export default function SignupSection() {
     setLoader(!loader);
     setTimeout(() => {
       setLoader(loader);
-    }, 6000);
+    }, 7000);
   };
 
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ export default function SignupSection() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState("true");
   const [profile, setProfile] = useState("");
 
   const validationSchema = Yup.object().shape({
@@ -87,7 +87,6 @@ export default function SignupSection() {
     setPhone("");
     setEmail("");
     setPassword("");
-    setIsAdmin(true);
 
     axios
       .post("https://fimat-group-api.onrender.com/user/signup", formData)
@@ -100,8 +99,8 @@ export default function SignupSection() {
         handleError();
       });
 
+      handleLoader();
     console.log(formData);
-    handleLoader();
   };
 
   return (
@@ -262,6 +261,13 @@ export default function SignupSection() {
                         onChange={(e) => setUsername(e.target.value)}
                         onBlur={handleBlur}
                         class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      />
+                      <Field
+                        type="text"
+                        placeholder="choisissez un nom d'utilisateur"
+                        name="isAdmin"
+                        value={isAdmin}
+                        class="w-full hidden px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.name && errors.username && (
                         <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">

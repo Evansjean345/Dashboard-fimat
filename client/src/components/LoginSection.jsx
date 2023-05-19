@@ -33,8 +33,8 @@ export default function LoginSection() {
   });
 
   const handleSubmit = async (e) => {
+    handleOpen();
     e.preventDefault();
-    handleOpen()
     try {
       const response = await axios.post(
         "https://fimat-group-api.onrender.com/user/login",
@@ -156,13 +156,13 @@ export default function LoginSection() {
                       <Loader />
                     </div>
                   ) : (
-                      <button
-                        type="submit"
-                        onClick={handleSubmit}
-                        class="w-full mt-6 px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none  focus:ring-opacity-50"
-                      >
-                        Se connceter
-                      </button>
+                    <button
+                      type="submit"
+                      onClick={handleSubmit}
+                      class="w-full mt-6 px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none  focus:ring-opacity-50"
+                    >
+                      Se connceter
+                    </button>
                   )}
                 </form>
 

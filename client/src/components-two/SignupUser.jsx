@@ -99,9 +99,7 @@ export default function SignupUser() {
         handleError();
       });
 
-      handleLoader();
     console.log(formData);
-
   };
 
   return (
@@ -387,8 +385,10 @@ export default function SignupUser() {
                     )}
                     <br />
                     {loader ? (
-                      <div className="w-72 flex items-center justify-center h-4 px-4 py-8
-                      ">
+                      <div
+                        className="w-72 flex items-center justify-center h-4 px-4 py-8
+                      "
+                      >
                         {" "}
                         <Loader />
                       </div>
@@ -397,6 +397,7 @@ export default function SignupUser() {
                         class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#a4511e] focus:outline-none focus:ring focus:ring-[#db6013] focus:ring-opacity-50"
                         type="submit"
                         disabled={isSubmitting}
+                        onClick={handleLoader}
                       >
                         <span>S'enregistrer </span>
 

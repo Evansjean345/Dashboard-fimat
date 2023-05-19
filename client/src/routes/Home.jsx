@@ -32,7 +32,7 @@ export default function Home() {
             ""
           ) : userInfo.isAdmin === undefined ? (
             ""
-          ) : userInfo.isAdmin === "true" ? (
+          ) : userInfo.isAdmin === true ? (
             <PanelBlocs />
           ) : (
             <PanelUser />
@@ -42,7 +42,7 @@ export default function Home() {
               ? "chargement . . ."
               : userInfo.isAdmin === undefined
               ? ""
-              : userInfo.isAdmin === "true"
+              : userInfo.isAdmin === true
               ? "liste des commandes"
               : "interface des commandes"}
           </strong>
@@ -50,7 +50,7 @@ export default function Home() {
             ""
           ) : userInfo.isAdmin === undefined ? (
             ""
-          ) : userInfo.isAdmin === "true" ? (
+          ) : userInfo.isAdmin === true ? (
             <Table />
           ) : (
             <Order />

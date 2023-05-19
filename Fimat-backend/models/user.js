@@ -44,7 +44,7 @@ const userSchema = new mongoose.Schema({
   imgUrl: { type: String },
   orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
   date: { type: String },
-  isAdmin: { type: Boolean, default: false },
+  isAdmin: { type : String},
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -28,7 +28,7 @@ exports.signup = async (req, res) => {
       email: req.body.email,
       password: hash,
       imgUrl: file,
-      isAdmin : req.body.isAdmin ? true : false ,
+      isAdmin: req.body.isAdmin ? true : false,
       date: new Date().toUTCString(),
     });
     admin
@@ -179,7 +179,7 @@ exports.getOrderByUser = (req, res) => {
       .populate({
         path: "orders",
         options: {
-          sort: { $natural : -1},
+          sort: { $natural: -1 },
         },
       })
       .then((order) => res.status(200).json(order))

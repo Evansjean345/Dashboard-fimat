@@ -51,6 +51,7 @@ export default function SignupSection() {
     password: Yup.string().required(
       "Le mot de passe doit contenir au moins 4 caractères"
     ),
+    isAdmin: Yup.string().required(),
     imgUrl: Yup.mixed().required("l'image est requise"),
   });
 
@@ -86,6 +87,7 @@ export default function SignupSection() {
     setPhone("");
     setEmail("");
     setPassword("");
+    setIsAdmin(true);
 
     axios
       .post("https://fimat-group-api.onrender.com/user/signup", formData)
@@ -179,6 +181,7 @@ export default function SignupSection() {
                   phone: phone,
                   email: email,
                   password: password,
+                  isAdmin: isAdmin,
                   imgUrl: imgUrl,
                 }}
                 validationSchema={validationSchema}

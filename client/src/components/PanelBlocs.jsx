@@ -23,7 +23,7 @@ export default function PanelBlocs() {
   const validuser = data2.filter((item) => item.isAdmin === false);
 
   return (
-    <div className=" py-12 rounded-xl p-12 bg-[#1507231a]">
+    <div className=" py-12 rounded-xl sm:p-12 bg-[#1507231a]">
       <div>
         <div className="flex md:flex-row  md:flex-nowrap flex-wrap flex-col w-full h-full md:space-x-12 md:space-y-0 space-y-12 rounded-xl p-12">
           {/* Panel 1 */}

@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  CardFooter,
-  Button,
-  IconButton,
-  Chip,
-} from "@material-tailwind/react";
+import { CardFooter, Button, IconButton, Chip } from "@material-tailwind/react";
 import "../App.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -22,14 +17,12 @@ export default function UserOrder() {
       .then((res) => setOrder(res.data.orders));
   }, [id]);
 
-
   const recordsPerPage = 7;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const currentData = order.slice(firstIndex, lastIndex);
   const npage = Math.ceil(order.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
-
 
   const prePage = () => {
     if (currentPage !== firstIndex) {
@@ -46,8 +39,6 @@ export default function UserOrder() {
       setCurrentPage(currentPage + 1);
     }
   };
-
-  const total = order.find((element) => "totalCost" in element);
 
   const moov = (
     <img
@@ -83,20 +74,20 @@ export default function UserOrder() {
 
   const livraison = (
     <img
-    src="/logo/cashOndelivery.png"
-    alt=""
-    className= "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
-  />
-  )
+      src="/logo/cashOndelivery.png"
+      alt=""
+      className="h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
+    />
+  );
 
   const facture = (
     <Chip
       variant="ghost"
-      color="yellow"
+      color="red"
       size="sm"
       value="en attente de facturation"
       icon={
-        <span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-yellow-900" />
+        <span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-red-900" />
       }
     />
   );
@@ -228,14 +219,16 @@ export default function UserOrder() {
                                       ? orange
                                       : item.payement === "GTBank"
                                       ? gtbBank
-                                      : item.payement === "à-la-Livraison" ? livraison : ""}
+                                      : item.payement === "à-la-Livraison"
+                                      ? livraison
+                                      : ""}
                                   </div>
                                 </td>
                                 <td class="px-8 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                   {item.packs} packs
                                 </td>
                                 <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                  {total === undefined ? (
+                                  {order.totalCost === undefined ? (
                                     facture
                                   ) : (
                                     <Chip

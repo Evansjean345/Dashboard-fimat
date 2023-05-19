@@ -23,7 +23,7 @@ export default function PanelUser() {
   const blur = "loading..."
 
   return (
-    <div className=" py-12 rounded-xl p-12 bg-[#1507231a]">
+    <div className=" py-12 rounded-xl sm:p-12 bg-[#1507231a]">
       <div className="px-12 flex md:flex-row  md:flex-nowrap flex-wrap flex-col w-full h-full md:space-x-12 md:space-y-0 space-y-12 rounded-xl p-12">
         <div className="md:w-1/3 w-full bg-white flex justify-center items-center rounded-xl  space-x-1 sm:space-x-4 lg:space-x-8 py-8 px-5 h-44">
           <img src="/images/order-1.png" alt="" className="w-16 h-16 mt-2" />

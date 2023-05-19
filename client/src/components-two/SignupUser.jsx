@@ -12,6 +12,7 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
+import Loader from "../utils/Loader";
 
 export default function SignupUser() {
   const [name, setName] = useState("");
@@ -22,6 +23,17 @@ export default function SignupUser() {
   const [password, setPassword] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [profile, setProfile] = useState("");
+
+  //gestion
+
+  const [loader, setLoader] = useState(false);
+
+  const handleLoader = () => {
+    setLoader(!loader);
+    setTimeout(() => {
+      setLoader(loader);
+    }, 6000);
+  };
 
   const navigate = useNavigate();
 
@@ -88,6 +100,8 @@ export default function SignupUser() {
       });
 
     console.log(formData);
+
+    handleLoader();
   };
 
   return (
@@ -97,8 +111,7 @@ export default function SignupUser() {
           <div
             class="hidden bg-cover lg:block lg:w-2/5"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')",
+              backgroundImage: "url('/images/user-text.png')",
             }}
           ></div>
 
@@ -120,7 +133,7 @@ export default function SignupUser() {
 
                 <div class="mt-3 md:flex md:items-center md:-mx-2">
                   <Link to="/signup/admin">
-                    <button class="flex justify-center w-full px-6 py-3 text-blue-500 border border-blue-500  bg-blue-white rounded-lg md:w-auto md:mx-2 focus:outline-none">
+                    <button class="flex justify-center w-full px-6 py-3 text-[#db6013] border border-[#db6013]  bg-blue-white rounded-lg md:w-auto md:mx-2 focus:outline-none">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="w-6 h-6"
@@ -140,7 +153,7 @@ export default function SignupUser() {
                     </button>
                   </Link>
                   <Link to="/signup/user">
-                    <button class="flex justify-center w-full px-6 py-3 mt-4 text-white border bg-blue-500 border-blue-500 rounded-lg md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none">
+                    <button class="flex justify-center w-full px-6 py-3 mt-4 text-white border bg-[#db6013] border-[#db6013] rounded-lg md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="w-6 h-6"
@@ -193,7 +206,7 @@ export default function SignupUser() {
                         htmlFor="name"
                         enctype
                       >
-                        First Name
+                        Prénoms
                       </label>
                       <Field
                         type="text"
@@ -218,7 +231,7 @@ export default function SignupUser() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="lastname"
                       >
-                        Last name
+                        Nom d'utilisateur
                       </label>
                       <Field
                         type="text"
@@ -240,7 +253,7 @@ export default function SignupUser() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="username"
                       >
-                        Username
+                        Nom d'utilisateur
                       </label>
                       <Field
                         type="text"
@@ -263,7 +276,7 @@ export default function SignupUser() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="phone"
                       >
-                        Phone number
+                        Numéro de téléphone
                       </label>
                       <input
                         type="text"
@@ -286,7 +299,7 @@ export default function SignupUser() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="email"
                       >
-                        Email address
+                        Adresse mail
                       </label>
                       <Field
                         type="email"
@@ -309,7 +322,7 @@ export default function SignupUser() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="password"
                       >
-                        Password
+                        Mot de passe
                       </label>
                       <Field
                         type="password"
@@ -373,26 +386,34 @@ export default function SignupUser() {
                       </div>
                     )}
                     <br />
-                    <button
-                      class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                      type="submit"
-                      disabled={isSubmitting}
-                    >
-                      <span>S'enregistrer </span>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5 rtl:-scale-x-100"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
+                    {loader ? (
+                      <div className="w-72 flex items-center justify-center h-4 px-4 py-8
+                      ">
+                        {" "}
+                        <Loader />
+                      </div>
+                    ) : (
+                      <button
+                        class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#a4511e] focus:outline-none focus:ring focus:ring-[#db6013] focus:ring-opacity-50"
+                        type="submit"
+                        disabled={isSubmitting}
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </button>
+                        <span>S'enregistrer </span>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-5 h-5 rtl:-scale-x-100"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    )}
                   </form>
                 )}
               </Formik>

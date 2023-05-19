@@ -81,7 +81,7 @@ function OrderTable() {
 
   return (
     <>
-      <div className="w-full sm:px-6 py-12">
+      <div className="w-full  h-[100vh] sm:px-6 py-12">
         <div className="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
           <div className="sm:flex items-center justify-between" id="tabSearch">
             <div className="flex sm:flex-col flex-col">
@@ -182,7 +182,7 @@ function OrderTable() {
                         {item.recipient && item.recipient.name}
                       </p>
                       <p className="text-xs leading-3 text-gray-600 mt-2">
-                        { item.recipient &&  item.recipient.phone}
+                        {item.recipient && item.recipient.phone}
                       </p>
                     </td>
                     <td className="pl-16">

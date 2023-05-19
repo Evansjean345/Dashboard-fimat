@@ -3,8 +3,28 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { AuthContext } from "../services/account.service";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  Input,
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+import Loader from "../utils/Loader";
 
 export default function LoginSection() {
+  //modal
+  const [open, setOpen] = useState(false);
+  const [error, setError] = useState(false);
+  const handleOpen = () => {
+    setOpen(!open);
+    setTimeout(() => {
+      setOpen(open);
+    }, 5000);
+  };
+  const handleError = () => setError(!error);
+  //auth
   const { login, isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -14,6 +34,7 @@ export default function LoginSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    handleOpen()
     try {
       const response = await axios.post(
         "https://fimat-group-api.onrender.com/user/login",
@@ -25,6 +46,7 @@ export default function LoginSection() {
       login({ userId, token });
     } catch (error) {
       console.log(error);
+      handleError();
     }
     if (isAuthenticated()) {
       navigate("/");
@@ -43,9 +65,9 @@ export default function LoginSection() {
       <div class="bg-white dark:bg-gray-900">
         <div class="flex justify-center h-screen">
           <div
-            class="hidden bg-cover  lg:block lg:w-2/3"
+            class="hidden bg-cover   lg:block lg:w-2/3"
             style={{
-              backgroundImage: `url(https://images.unsplash.com/photo-1513672494107-cd9d848a383e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80`,
+              backgroundImage: `url(/images/user.png)`,
             }}
           >
             <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
@@ -109,12 +131,13 @@ export default function LoginSection() {
                       >
                         Mot de passe
                       </label>
-                      <a
+                      {/*
+                        <a
                         href="#"
                         class="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline"
                       >
                         oublié
-                      </a>
+                      </a> */}
                     </div>
 
                     <input
@@ -128,18 +151,29 @@ export default function LoginSection() {
                     />
                   </div>
 
-                  <div class="mt-6" onClick={handleSubmit}>
-                    <button
-                      type="submit"
-                      class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                    >
-                      Se connceter
-                    </button>
-                  </div>
+                  {open ? (
+                    <div className="w-96  flex items-center justify-center h-4 px-4 py-8 absolute">
+                      <Loader />
+                    </div>
+                  ) : (
+                      <button
+                        type="submit"
+                        onClick={handleSubmit}
+                        class="w-full mt-6 px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none  focus:ring-opacity-50"
+                      >
+                        Se connceter
+                      </button>
+                  )}
                 </form>
 
-                <p class="mt-6 text-sm text-center text-gray-400">
-                  &#x27; Vous n'avez pas de compte{" "}
+                <p
+                  class={
+                    open
+                      ? "mt-16 text-sm text-center text-gray-400"
+                      : "mt-6 text-sm text-center text-gray-400"
+                  }
+                >
+                  Vous n'avez pas de compte{" "}
                   <Link
                     to="/signup/user"
                     class="text-[#db6013] focus:outline-none focus:underline hover:underline"
@@ -153,6 +187,19 @@ export default function LoginSection() {
           </div>
         </div>
       </div>
+      {/* commande refusée*/}
+      <Dialog open={error} handler={handleError} size="xl">
+        <DialogHeader>Erreur de connexion</DialogHeader>
+        <DialogBody divider className="text-bold">
+          Le nom d'utilisateur et le mot de passe ne correspondent pas veuillez
+          réesayer
+        </DialogBody>
+        <DialogFooter>
+          <Button variant="gradient" color="red" onClick={handleError}>
+            <span>Fermer</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
     </>
   );
 }

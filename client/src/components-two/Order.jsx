@@ -12,8 +12,19 @@ import { Field, Formik } from "formik";
 import "../App.css";
 import axios from "axios";
 import { AuthContext } from "../services/account.service";
+import Loader from "../utils/Loader";
 
 export default function Order() {
+  //gestion
+  const [loader, setLoader] = useState(false);
+
+  const handleLoader = () => {
+    setLoader(!loader);
+    setTimeout(() => {
+      setLoader(loader);
+    }, 7000);
+  };
+
   ///userId information
   const { getUserInfo } = useContext(AuthContext);
   const [user, setUser] = useState(null);
@@ -159,6 +170,7 @@ export default function Order() {
       });
 
     console.log(formData);
+    handleLoader();
   };
 
   const selectedTime = new Date();
@@ -615,9 +627,13 @@ export default function Order() {
                       </div>
                       {date && (
                         <div className="w-3/4 sm:flex sm:flex-row flex-col h-2 sm:px-24 px-10 font-semibold  sm:py-16 py-8 ">
-                          <div className="py-4 sm:py-0">
+                          <div className="hidden sm:block py-4 sm:py-0">
                             {" "}
                             Touchez l'icône du calendrier pour choisr la date :
+                          </div>
+                          <div className=" sm:hidden block py-4 sm:py-0">
+                            {" "}
+                            Touchez la case ci dessous pour choisir une date
                           </div>
                           <Input
                             type="date"
@@ -692,7 +708,7 @@ export default function Order() {
                             className={
                               pay1
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all object-cover"
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
+                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl sm:hover:scale-75  focus:scale-75 transition-all object-cover"
                             }
                             onClick={() => {
                               handlePayementChange("MOOV-africa");
@@ -709,7 +725,7 @@ export default function Order() {
                             className={
                               pay2
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all object-cover"
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
+                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl sm:hover:scale-75  focus:scale-75 transition-all object-cover"
                             }
                             onClick={() => {
                               handlePayementChange("MTN-momo");
@@ -726,7 +742,7 @@ export default function Order() {
                             className={
                               pay3
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all object-cover"
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
+                                : "h-[48px] w-[119px]  cursor-pointer sm:hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
                             }
                             onClick={() => {
                               handlePayementChange("ORANGE-money");
@@ -743,7 +759,7 @@ export default function Order() {
                             className={
                               pay4
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all "
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
+                                : "h-[48px] w-[119px]  cursor-pointer sm:hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
                             }
                             onClick={() => {
                               handlePayementChange("GTBank");
@@ -760,7 +776,7 @@ export default function Order() {
                             className={
                               pay5
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl focus:scale-75 transition-all"
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
+                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl sm:hover:scale-75  focus:scale-75 transition-all"
                             }
                             onClick={() => {
                               handlePayementChange("à-la-Livraison");
@@ -800,13 +816,22 @@ export default function Order() {
                     </div>
                   </div>
                   {/* Soumission */}
-                  <button
-                    type="button"
-                    onClick={changeOnclick}
-                    className="mt-8 hover:bg-gray-200 hover:text-[#db6013] cursor-pointer transition-all hover:scale-95 hover:border-[#db6013] hover:border-2 w-44 h-14 rounded-lg font-semibold text-white bg-[#db6013] flex items-center justify-center"
-                  >
-                    Passer la commande
-                  </button>
+                  {loader ? (
+                    <div
+                      className="w-72 flex items-center justify-center h-4 px-4 py-8
+                      "
+                    >
+                      <Loader />
+                    </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={changeOnclick}
+                      className="mt-8 hover:bg-gray-200 hover:text-[#db6013] cursor-pointer transition-all hover:scale-95 hover:border-[#db6013] hover:border-2 w-44 h-14 rounded-lg font-semibold text-white bg-[#db6013] flex items-center justify-center"
+                    >
+                      Passer la commande
+                    </button>
+                  )}
                 </form>
               )}
             </Formik>

@@ -12,11 +12,21 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
+import Loader from "../utils/Loader";
 
 export default function SignupSection() {
   //gestion
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(false);
+  const [loader, setLoader] = useState(false);
+
+  const handleLoader = () => {
+    setLoader(!loader);
+    setTimeout(() => {
+      setLoader(loader);
+    }, 6000);
+  };
+
   const navigate = useNavigate();
 
   //
@@ -89,6 +99,7 @@ export default function SignupSection() {
       });
 
     console.log(formData);
+    handleLoader();
   };
 
   return (
@@ -98,8 +109,7 @@ export default function SignupSection() {
           <div
             class="hidden bg-cover lg:block lg:w-2/5"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1cmVhdXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')",
+              backgroundImage: "url(/images/admin-text.png)",
             }}
           ></div>
 
@@ -120,7 +130,7 @@ export default function SignupSection() {
                 </h1>
 
                 <div class="mt-3 md:flex md:items-center md:-mx-2">
-                  <button class="flex justify-center w-full px-6 py-3 text-white bg-blue-500 rounded-lg md:w-auto md:mx-2 focus:outline-none">
+                  <button class="flex justify-center w-full px-6 py-3 text-white bg-[#db6013] rounded-lg md:w-auto md:mx-2 focus:outline-none">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-6 h-6"
@@ -139,7 +149,7 @@ export default function SignupSection() {
                     <span class="mx-2">administrateur</span>
                   </button>
                   <Link to="/signup/user">
-                    <button class="flex justify-center w-full px-6 py-3 mt-4 text-blue-500 border border-blue-500 rounded-lg md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none">
+                    <button class="flex justify-center w-full px-6 py-3 mt-4 text-[#db6013] border border-[#db6013] rounded-lg md:mt-0 md:w-auto md:mx-2 focus:outline-none">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="w-6 h-6"
@@ -192,7 +202,7 @@ export default function SignupSection() {
                         htmlFor="name"
                         enctype
                       >
-                        First Name
+                        Prénoms
                       </label>
                       <Field
                         type="text"
@@ -217,7 +227,7 @@ export default function SignupSection() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="lastname"
                       >
-                        Last name
+                        Nom
                       </label>
                       <Field
                         type="text"
@@ -239,7 +249,7 @@ export default function SignupSection() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="username"
                       >
-                        Username
+                        Nom d'utilisateur
                       </label>
                       <Field
                         type="text"
@@ -262,7 +272,7 @@ export default function SignupSection() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="phone"
                       >
-                        Phone number
+                        Numéro de téléphone
                       </label>
                       <input
                         type="text"
@@ -285,7 +295,7 @@ export default function SignupSection() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="email"
                       >
-                        Email address
+                        Adresse mail
                       </label>
                       <Field
                         type="email"
@@ -308,7 +318,7 @@ export default function SignupSection() {
                         class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
                         htmlFor="password"
                       >
-                        Password
+                        Mot de passe
                       </label>
                       <Field
                         type="password"
@@ -372,26 +382,36 @@ export default function SignupSection() {
                     )}
                     <br />
 
-                    <button
-                      class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                      type="submit"
-                      disabled={isSubmitting}
-                    >
-                      <span>S'enregistrer </span>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5 rtl:-scale-x-100"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
+                    {loader ? (
+                      <div
+                        className="w-72 flex items-center justify-center h-4 px-4 py-8
+                      "
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </button>
+                        {" "}
+                        <Loader />
+                      </div>
+                    ) : (
+                      <button
+                        class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#db6013] focus:outline-none focus:ring focus:ring-[#db6013] focus:ring-opacity-50"
+                        type="submit"
+                        disabled={isSubmitting}
+                      >
+                        <span>S'enregistrer </span>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-5 h-5 rtl:-scale-x-100"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    )}
                   </form>
                 )}
               </Formik>
@@ -411,7 +431,7 @@ export default function SignupSection() {
               variant="gradient"
               color="green"
               onClick={() => {
-                navigate("/");
+                navigate("/login");
               }}
             >
               <span>se connecter</span>

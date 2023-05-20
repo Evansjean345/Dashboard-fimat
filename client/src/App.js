@@ -21,7 +21,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/signup/user" element={<SignupUser />} />
-          <Route path="/" element={isAuthenticated() ? <Home/> : <Login/>} />
+        {isAuthenticated() ? (
+          <Route path="/" element={<Home />} />
+        ) : (
+          <Route path="/" element={<Login />} />
+        )}
         <Route path="/login" element={<Login />} />
         <Route path="/signup/admin" element={<Signup />} />
         <Route path="/dashboard/admin/all-order" element={<AllOrder />} />

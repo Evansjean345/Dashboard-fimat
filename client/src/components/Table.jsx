@@ -180,9 +180,11 @@ function Table() {
                     </div>
                   </td>
                   <td className="pl-20">
-                    <p className="font-medium">{item.recipient.name}</p>
+                    <p className="font-medium">
+                      {item.recipient && item.recipient.name}
+                    </p>
                     <p className="text-xs leading-3 font-medium text-gray-600 mt-2">
-                      {item.recipient.phone}
+                      {item.recipient && item.recipient.phone}
                     </p>
                   </td>
                   <td className="pl-16">

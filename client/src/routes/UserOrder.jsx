@@ -94,14 +94,14 @@ export default function UserOrder() {
 
   return (
     <>
-      <div className="flex flex-col h-full  xl:flex-row">
+      <div className="flex flex-col h-full  xl:flex-row ">
         <div className="xl:w-[17%] w-full">
           <Navbar />
         </div>
         <div className="font-mono bg-gray-200 xl:w-[83%] w-full py-4 xl:px-16 px-8 flex flex-col  ">
           {/* Order */}
           <section>
-            <section class="container px-4 mx-auto">
+            <section class="container px-4 mx-auto h-[100vh]">
               <div class="flex items-center gap-x-3">
                 <h2 class="text-lg font-medium text-gray-800 dark:text-white">
                   Nombres de commandes

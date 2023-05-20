@@ -38,7 +38,7 @@ function UserSection() {
 
   return (
     <>
-      <section class="container px-4 mx-auto">
+      <section class="container px-4 mx-auto h-[100vh]">
         <div class="flex items-center gap-x-3">
           <h2 class="text-lg font-medium text-gray-800 dark:text-white">
             nombres d'utilisateurs

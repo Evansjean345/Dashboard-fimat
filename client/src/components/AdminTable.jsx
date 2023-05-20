@@ -221,9 +221,9 @@ export default function AdminTable() {
                             {item.comments}
                           </td>
                           <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.recipient.name}
+                            {item.recipient && item.recipient.name}
                             <br />
-                            {item.recipient.phone}
+                            {item.recipient && item.recipient.phone}
                           </td>
                           <td class="px-2 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                             <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-50">

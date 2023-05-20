@@ -103,11 +103,11 @@ export default function UserOrder() {
           <section>
             <section class="container px-4 mx-auto h-[100vh]">
               <div class="flex items-center gap-x-3">
-                <h2 class="text-lg font-medium text-gray-800 dark:text-white">
+                <h2 class="text-lg font-medium text-gray-800 ">
                   Nombres de commandes
                 </h2>
 
-                <span class="px-3 py-1 font-bold text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
+                <span class="px-3 py-1 font-bold text-xs text-blue-600 bg-blue-100 rounded-full ">
                   {order.length} commandes
                 </span>
               </div>
@@ -115,13 +115,13 @@ export default function UserOrder() {
               <div class="flex flex-col mt-6">
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                   <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                    <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-                      <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead class="bg-gray-50 dark:bg-gray-800">
+                    <div class="overflow-hidden border border-gray-200 md:rounded-lg">
+                      <table class="min-w-full divide-y divide-gray-200 ">
+                        <thead class="bg-gray-50 ">
                           <tr>
                             <th
                               scope="col"
-                              class="py-3.5 px-4 text-sm font-normal text-start rtl:text-right text-gray-500 dark:text-gray-400"
+                              class="py-3.5 px-4 text-sm font-normal text-start rtl:text-right text-gray-500 "
                             >
                               <div class="flex items-center gap-x-3">
                                 <span>Numéro et jour de la commande</span>
@@ -130,7 +130,7 @@ export default function UserOrder() {
 
                             <th
                               scope="col"
-                              class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                              class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 "
                             >
                               <button class="flex items-center gap-x-2">
                                 <span>prix de la marchandise</span>
@@ -138,7 +138,7 @@ export default function UserOrder() {
                             </th>
                             <th
                               scope="col"
-                              class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                              class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 "
                             >
                               <button class="flex items-center gap-x-2">
                                 <span>Moyen de Paiemnet</span>
@@ -147,7 +147,7 @@ export default function UserOrder() {
 
                             <th
                               scope="col"
-                              class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                              class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 "
                             >
                               <button class="flex items-center gap-x-2">
                                 <span>Nombre de packs</span>
@@ -156,14 +156,14 @@ export default function UserOrder() {
 
                             <th
                               scope="col"
-                              class="px-16 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                              class="px-16 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
                             >
                               Coût Total
                             </th>
 
                             <th
                               scope="col"
-                              class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                              class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 "
                             ></th>
 
                             <th scope="col" class="relative py-3.5 px-4">
@@ -173,7 +173,7 @@ export default function UserOrder() {
                             </th>
                           </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                        <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 ">
                           {currentData.map((item) => {
                             return (
                               <tr>
@@ -199,7 +199,7 @@ export default function UserOrder() {
                                           <br />
                                           {item.date}
                                         </h2>
-                                        <p class="text-sm font-normal text-gray-600 dark:text-gray-400"></p>
+                                        <p class="text-sm font-normal text-gray-600 "></p>
                                       </div>
                                     </div>
                                   </div>
@@ -224,10 +224,10 @@ export default function UserOrder() {
                                       : ""}
                                   </div>
                                 </td>
-                                <td class="px-8 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                                <td class="px-8 py-4 text-sm text-gray-500  whitespace-nowrap">
                                   {item.packs} packs
                                 </td>
-                                <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                                <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                                   {order.totalCost === undefined ? (
                                     facture
                                   ) : (

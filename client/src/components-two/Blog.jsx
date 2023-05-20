@@ -76,13 +76,11 @@ const Blog = () => {
         {({ erros, touched, handleChange, handleBlur, isSubmitting }) => (
           <form id="login" className="py-12">
             <div className="bg-white p-12 rounded-xl">
-              <div className="container mx-auto bg-white dark:bg-gray-800 rounded">
-                <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800">
+              <div className="container mx-auto bg-white  rounded">
+                <div className="xl:w-full border-b border-gray-300  py-5 bg-white ">
                   <div className="flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center">
-                    <p className="text-lg text-gray-800 dark:text-gray-100 font-bold">
-                      Profile
-                    </p>
-                    <div className="ml-2 cursor-pointer text-gray-600 dark:text-gray-400">
+                    <p className="text-lg text-gray-800  font-bold">Profile</p>
+                    <div className="ml-2 cursor-pointer text-gray-600 ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -102,7 +100,11 @@ const Blog = () => {
                   <div className="xl:w-9/12 w-11/12 mx-auto xl:mx-0">
                     <div className="rounded relative mt-8 h-48">
                       <img
-                        src={userInfo === null ? "/images/user.jpeg" : userInfo.imgUrl}
+                        src={
+                          userInfo === null
+                            ? "/images/user.jpeg"
+                            : userInfo.imgUrl
+                        }
                         alt
                         className="w-full h-full object-cover rounded absolute shadow"
                       />
@@ -164,7 +166,7 @@ const Blog = () => {
                     <div className="mt-16 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                       <label
                         htmlFor="username"
-                        className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                        className="pb-2 text-sm font-bold text-gray-800 "
                       >
                         Nom d'utilisateur
                       </label>
@@ -177,7 +179,7 @@ const Blog = () => {
                         onChange={(e) => {
                           setUsername(e.target.value);
                         }}
-                        className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                        className="border border-gray-300  pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 "
                         placeholder={userInfo === null ? "" : userInfo.username}
                       />
                     </div>
@@ -222,13 +224,13 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-              <div className="container mx-auto bg-white dark:bg-gray-800 mt-10 rounded px-4">
-                <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5">
+              <div className="container mx-auto bg-white  mt-10 rounded px-4">
+                <div className="xl:w-full border-b border-gray-300  py-5">
                   <div className="flex w-11/12 mx-auto xl:w-full xl:mx-0 items-center">
-                    <p className="text-lg text-gray-800 dark:text-gray-100 font-bold">
+                    <p className="text-lg  font-bold">
                       Informations personnelles
                     </p>
-                    <div className="ml-2 cursor-pointer text-gray-600 dark:text-gray-400">
+                    <div className="ml-2 cursor-pointer text-gray-600 ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -249,7 +251,7 @@ const Blog = () => {
                     <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                       <label
                         htmlFor="name"
-                        className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                        className="pb-2 text-sm font-bold text-gray-800 "
                       >
                         Nom
                       </label>
@@ -262,14 +264,14 @@ const Blog = () => {
                         onChange={(e) => {
                           setName(e.target.value);
                         }}
-                        className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                        className="border border-gray-300  pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400"
                         placeholder={userInfo === null ? "" : userInfo.name}
                       />
                     </div>
                     <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                       <label
                         htmlFor="lastname"
-                        className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                        className="pb-2 text-sm font-bold text-gray-800 "
                       >
                         Last Name
                       </label>
@@ -282,19 +284,19 @@ const Blog = () => {
                         onChange={(e) => {
                           setLastname(e.target.value);
                         }}
-                        className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                        className="border border-gray-300  pl-3 py-3 shadow-sm bg-transparent rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 "
                         placeholder={userInfo === null ? "" : userInfo.lastname}
                       />
                     </div>
                     <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                       <label
                         htmlFor="email"
-                        className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
+                        className="pb-2 text-sm font-bold text-gray-800 "
                       >
                         Email
                       </label>
                       <div className="border border-green-400 shadow-sm rounded flex">
-                        <div className="px-4 py-3 dark:text-gray-100 flex items-center border-r border-green-400">
+                        <div className="px-4 py-3 flex items-center border-r border-green-400">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="icon icon-tabler icon-tabler-mail"
@@ -350,11 +352,11 @@ const Blog = () => {
                       <div className="flex items-center pb-2">
                         <label
                           htmlFor="password"
-                          className="text-sm font-bold text-gray-800 dark:text-gray-100"
+                          className="text-sm font-bold text-gray-800 "
                         >
                           Mot de passe
                         </label>
-                        <div className="ml-2 cursor-pointer text-gray-600 dark:text-gray-400">
+                        <div className="ml-2 cursor-pointer text-gray-600 ">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -378,7 +380,7 @@ const Blog = () => {
                           setPassword(e.target.value);
                         }}
                         id="password"
-                        className="bg-transparent border border-red-400 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                        className="bg-transparent border border-red-400 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 placeholder-gray-500 text-gray-500 "
                         placeholder=""
                       />
                       <div className="flex justify-between items-center pt-1 text-red-400">
@@ -405,8 +407,8 @@ const Blog = () => {
                 </div>
               </div>
               <div className="container mx-auto w-11/12 xl:w-full">
-                <div className="w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex justify-end">
-                  <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4">
+                <div className="w-full py-4 sm:px-0 bg-white  flex justify-end">
+                  <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300   rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4">
                     <Link to="/">Annulé</Link>
                   </button>
                   <button

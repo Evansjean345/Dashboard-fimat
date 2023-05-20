@@ -104,7 +104,7 @@ export default function SignupSection() {
 
   return (
     <>
-      <section class="bg-white dark:bg-gray-900">
+      <section class="bg-white ">
         <div class="flex justify-center min-h-screen">
           <div
             class="hidden bg-cover lg:block lg:w-2/5"
@@ -115,17 +115,17 @@ export default function SignupSection() {
 
           <div class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
             <div class="w-full">
-              <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
+              <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize ">
                 Obtenez Votre Compte Gratuit Dès Maintenant.
               </h1>
 
-              <p class="mt-4 text-gray-500 dark:text-gray-400">
+              <p class="mt-4 text-gray-500 ">
                 Commençons par vous préparer afin que vous puissiez vérifier
                 votre compte personnel et commencer à configurer votre profil.
               </p>
 
               <div class="mt-6">
-                <h1 class="text-gray-500 dark:text-gray-300">
+                <h1 class="text-gray-500 ">
                   Sélectionnez le type de compte
                 </h1>
 
@@ -199,7 +199,7 @@ export default function SignupSection() {
                   >
                     <div>
                       <label
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                        class="block mb-2 text-sm text-gray-600 "
                         htmlFor="name"
                         enctype
                       >
@@ -214,10 +214,10 @@ export default function SignupSection() {
                           setName(e.target.value);
                         }}
                         onBlur={handleBlur}
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.name && errors.name && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
+                        <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
                           {errors.name}
                         </div>
                       )}
@@ -225,7 +225,7 @@ export default function SignupSection() {
 
                     <div>
                       <label
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                        class="block mb-2 text-sm text-gray-600"
                         htmlFor="lastname"
                       >
                         Nom
@@ -237,17 +237,17 @@ export default function SignupSection() {
                         value={lastname}
                         onChange={(e) => setLastname(e.target.value)}
                         onBlur={handleBlur}
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.name && errors.lastname && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
+                        <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
                           {errors.lastname}
                         </div>
                       )}
                     </div>
                     <div>
                       <label
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                        class="block mb-2 text-sm text-gray-600 "
                         htmlFor="username"
                       >
                         Nom d'utilisateur
@@ -259,7 +259,7 @@ export default function SignupSection() {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         onBlur={handleBlur}
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       <Field
                         type="text"
@@ -269,7 +269,7 @@ export default function SignupSection() {
                         class="w-full hidden px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.name && errors.username && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
+                        <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
                           {errors.username}
                         </div>
                       )}
@@ -277,7 +277,7 @@ export default function SignupSection() {
 
                     <div>
                       <label
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                        class="block mb-2 text-sm text-gray-600 "
                         htmlFor="phone"
                       >
                         Numéro de téléphone
@@ -289,10 +289,10 @@ export default function SignupSection() {
                         value={phone}
                         onBlur={handleBlur}
                         onChange={(e) => setPhone(e.target.value)}
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.phone && errors.phone && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
+                        <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
                           {errors.phone}
                         </div>
                       )}
@@ -300,7 +300,7 @@ export default function SignupSection() {
 
                     <div>
                       <label
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                        class="block mb-2 text-sm text-gray-600 "
                         htmlFor="email"
                       >
                         Adresse mail
@@ -312,10 +312,10 @@ export default function SignupSection() {
                         value={email}
                         onBlur={handleBlur}
                         onChange={(e) => setEmail(e.target.value)}
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.email && errors.email && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
+                        <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
                           {errors.email}
                         </div>
                       )}
@@ -323,7 +323,7 @@ export default function SignupSection() {
 
                     <div>
                       <label
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                        class="block mb-2 text-sm text-gray-600 "
                         htmlFor="password"
                       >
                         Mot de passe
@@ -335,10 +335,10 @@ export default function SignupSection() {
                         value={password}
                         onBlur={handleBlur}
                         onChange={(e) => setPassword(e.target.value)}
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.password && errors.password && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
+                        <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
                           {errors.password}
                         </div>
                       )}

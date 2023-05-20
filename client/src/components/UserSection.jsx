@@ -40,11 +40,11 @@ function UserSection() {
     <>
       <section class="container px-4 mx-auto h-[100vh]">
         <div class="flex items-center gap-x-3">
-          <h2 class="text-lg font-medium text-gray-800 dark:text-white">
+          <h2 class="text-lg font-medium text-gray-800 ">
             nombres d'utilisateurs
           </h2>
 
-          <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
+          <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">
              {data.length} utilisateurs
           </span>
         </div>
@@ -52,13 +52,13 @@ function UserSection() {
         <div class="flex flex-col mt-6">
           <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                  <thead class="bg-gray-50 dark:bg-gray-800">
+              <div class="overflow-hidden border border-gray-200  md:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200 ">
+                  <thead class="bg-gray-50">
                     <tr>
                       <th
                         scope="col"
-                        class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
                       >
                         <div class="flex items-center gap-x-3">
                           <span>Name</span>
@@ -67,7 +67,7 @@ function UserSection() {
 
                       <th
                         scope="col"
-                        class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
                       >
                         <button class="flex items-center gap-x-2">
                           <span>Numero</span>
@@ -102,7 +102,7 @@ function UserSection() {
 
                       <th
                         scope="col"
-                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 "
                       >
                         <button class="flex items-center gap-x-2">
                           <span>Role</span>
@@ -126,14 +126,14 @@ function UserSection() {
 
                       <th
                         scope="col"
-                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 "
                       >
                         Email address
                       </th>
 
                       <th
                         scope="col"
-                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 "
                       ></th>
 
                       <th scope="col" class="relative py-3.5 px-4">
@@ -141,7 +141,7 @@ function UserSection() {
                       </th>
                     </tr>
                   </thead>
-                  <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                  <tbody class="bg-white divide-y divide-gray-200  ">
                     {currentData.map((item) => {
                       return (
                         <tr>
@@ -162,10 +162,10 @@ function UserSection() {
                                   />
                                 )}
                                 <div>
-                                  <h2 class="font-medium text-gray-800 dark:text-white ">
+                                  <h2 class="font-medium text-gray-800 ">
                                     {item.lastname} {item.name}
                                   </h2>
-                                  <p class="text-sm font-normal text-gray-600 dark:text-gray-400">
+                                  <p class="text-sm font-normal text-gray-600 ">
                                     {item.username}
                                   </p>
                                 </div>
@@ -177,10 +177,10 @@ function UserSection() {
                               {item.phone}
                             </div>
                           </td>
-                          <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
                             Utilisateur
                           </td>
-                          <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                            {item.email}
                           </td>
                           <td class="px-4 py-4 text-sm whitespace-nowrap">

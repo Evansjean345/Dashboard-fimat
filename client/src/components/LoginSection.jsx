@@ -62,7 +62,7 @@ export default function LoginSection() {
 
   return (
     <>
-      <div class="bg-white dark:bg-gray-900">
+      <div class="bg-white">
         <div class="flex justify-center h-screen">
           <div
             class="hidden bg-cover   lg:block lg:w-2/3"
@@ -98,7 +98,7 @@ export default function LoginSection() {
                   />
                 </div>
 
-                <p class="mt-3 text-gray-500 dark:text-gray-300">
+                <p class="mt-3 text-gray-500">
                   Enregistrez vous pour accédez à votre compte
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function LoginSection() {
                   <div>
                     <label
                       for="username"
-                      class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                      class="block mb-2 text-sm text-gray-600"
                     >
                       Nom d'utilisateur
                     </label>
@@ -119,7 +119,7 @@ export default function LoginSection() {
                       placeholder="....."
                       value={formData.username}
                       onChange={handleChange}
-                      class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring focus:ring-opacity-40"
                     />
                   </div>
 
@@ -127,7 +127,7 @@ export default function LoginSection() {
                     <div class="flex justify-between mb-2">
                       <label
                         for="password"
-                        class="text-sm text-gray-600 dark:text-gray-200"
+                        class="text-sm text-gray-600"
                       >
                         Mot de passe
                       </label>
@@ -147,7 +147,7 @@ export default function LoginSection() {
                       placeholder="Mot de passe"
                       value={formData.password}
                       onChange={handleChange}
-                      class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:outline-none focus:ring focus:ring-opacity-40"
                     />
                   </div>
 

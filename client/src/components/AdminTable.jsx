@@ -90,13 +90,13 @@ export default function AdminTable() {
         <div class="flex flex-col">
           <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                  <thead class="bg-gray-50 dark:bg-gray-800 font-semibold font-mono">
+              <div class="overflow-hidden border border-gray-200  md:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200 ">
+                  <thead class="bg-gray-50  font-semibold font-mono">
                     <tr>
                       <th
                         scope="col"
-                        class="py-3.5 px-4 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="py-3.5 px-4 text-sm  text-left rtl:text-right text-gray-500"
                       >
                         <div class="flex items-center gap-x-3">
                           <button class="flex items-center gap-x-2">
@@ -133,63 +133,63 @@ export default function AdminTable() {
 
                       <th
                         scope="col"
-                        class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         Details
                       </th>
                       <th
                         scope="col"
-                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500"
                       >
                         Destinataire
                       </th>
 
                       <th
                         scope="col"
-                        class="px-8 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-8 py-3.5 text-sm  text-left rtl:text-right text-gray-500"
                       >
                         Status
                       </th>
                       <th
                         scope="col"
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         Destination
                       </th>
                       <th
                         scope="col"
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         Moyen de paiement
                       </th>
                       <th
                         scope="col"
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         lieu de reception du colis
                       </th>
                       <th
                         scope="col"
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         Nombres de packs
                       </th>
                       <th
                         scope="col"
-                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         Prix de la marchandise
                       </th>
 
                       <th
                         scope="col"
-                        class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         Jour de livraison et heure de la livraison
                       </th>
                       <th
                         scope="col"
-                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
                       >
                         Coût Total
                       </th>
@@ -199,11 +199,11 @@ export default function AdminTable() {
                       </th>
                     </tr>
                   </thead>
-                  <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 font-semibold">
+                  <tbody class="bg-white divide-y divide-gray-200 font-semibold">
                     {currentData.map((item) => {
                       return (
                         <tr key={item._id}>
-                          <td class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                          <td class="px-4 py-4 text-sm font-medium text-gray-700  whitespace-nowrap">
                             <div class=" items-center gap-x-3 text-indigo-500">
                               <Link
                                 to={`/dashboard/admin/order/facturation/${item._id}`}
@@ -217,10 +217,10 @@ export default function AdminTable() {
                               </span>
                             </div>
                           </td>
-                          <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.comments}
                           </td>
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-16 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.recipient && item.recipient.name}
                             <br />
                             {item.recipient && item.recipient.phone}
@@ -232,29 +232,29 @@ export default function AdminTable() {
                                 : invalid}
                             </div>
                           </td>
-                          <td class="px-12 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-12 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.destination}
                           </td>
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-16 py-4 text-sm text-gray-500  whitespace-nowrap">
                             <Chip color="gray" value={item.payement} />
                           </td>
-                          <td class="px-12 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-12 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.reception}
                           </td>
-                          <td class="px-12 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-12 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.packs} packs
                           </td>
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-16 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.goods_price} cfa
                             <br />
                           </td>
-                          <td class="px-8 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-8 py-4 text-sm text-gray-500  whitespace-nowrap">
                             <Chip
                               color="teal"
                               value={`${item.delivery_day}/ ${item.delivery_hours} H`}
                             />
                           </td>
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          <td class="px-16 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.totalCost === undefined ? (
                               <Chip
                                 variant="ghost"

@@ -10,6 +10,10 @@ const OrderRoutes = require("./routes/order");
 const { checkUser, requireAuth } = require("./middleware/auth");
 
 app.get("/", (req, res) => res.send("Welcome to Fimat Group Api"));
+//active Routes
+app.get("/ping" , (req,res)=>{
+ res.send("OK")
+})
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening on port ${port}!`);

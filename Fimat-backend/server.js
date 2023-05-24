@@ -4,9 +4,7 @@ const port = 4000;
 require("dotenv").config({ path: "./config/.env" });
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const cors = require('cors')
 const mongoose = require("mongoose");
-const path = require('path')
 const UserRoutes = require("./routes/user");
 const OrderRoutes = require("./routes/order");
 const { checkUser, requireAuth } = require("./middleware/auth");
@@ -30,7 +28,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors())
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -52,4 +49,3 @@ app.get("/jwtid", requireAuth, (req, res) => {
 });
 app.use(UserRoutes);
 app.use(OrderRoutes);
-app.use("/uploads",express.static(path.join(__dirname,"uploads")))

@@ -1,41 +1,29 @@
 const Order = require("../models/order");
-const User = require("../models/user");
 const ObjectID = require("mongoose").Types.ObjectId;
-const cloud = require("../middleware/cloudinary");
 
 //createOrder function
 exports.createOrder = async (req, res) => {
-  let file = null;
-  if (req.file) {
-    const cloudinary = cloud.v2.uploader.upload(req.file.path);
-    file = (await cloudinary).secure_url;
+  try {
+    const order = new Order({
+      ...req.body,
+      tracking: `CHAP${Math.random() * (10 - 1) + 1}`,
+      date: Date(),
+    });
+    order
+      .save()
+      .then(() =>
+        res.status(201).json({ message: "La commande a bien étée enregistrée" })
+      )
+      .catch((error) => res.status(400).json({ message: error }));
+  } catch (error) {
+    res.status(500).json({ message: error });
   }
-  const userId = req.body.userId;
-  const order = new Order({
-    ...req.body,
-    orderUrl: file,
-    tracking: `CHAP${Math.random() * (10 - 1) + 1}`,
-    date: new Date().toUTCString(),
-  });
-  order
-    .save()
-    .then(() => {
-      return User.findByIdAndUpdate(
-        { _id: order.user },
-        { $push: { orders: order._id } }
-      );
-    })
-    .then(() =>
-      res.status(201).json({ message: "La commande a bien étée enregistrée" })
-    )
-    .catch((error) => res.status(400).json({ error }));
 };
 
 //getOrder Function
 exports.getOrder = async (req, res) => {
   try {
     await Order.find()
-      .sort({ $natural: -1 })
       .then((order) => res.status(200).json(order))
       .catch((error) => res.status(400).json(error));
   } catch (error) {
@@ -64,21 +52,12 @@ exports.modifyOrder = async (req, res) => {
     return res.status(400).send(`ID unknown : ${req.params.id}`);
   } else {
     try {
-      let obj = {};
-      if (req.file) {
-        const cloudinary = cloud.v2.uploader.upload(req.file.path);
-        const file = (await cloudinary).secure_url;
-        obj = {
-          ...obj,
-          orderUrl: file,
-        };
-      }
       await Order.findByIdAndUpdate(
         { _id: req.params.id },
         {
           $set: {
             ...req.body,
-            ...obj,
+            date: Date(),
           },
         },
         { new: true, upsert: true, setDefaultsOnInsert: true }
@@ -116,4 +95,3 @@ exports.deleteOrder = async (req, res) => {
     }
   }
 };
-

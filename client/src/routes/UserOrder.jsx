@@ -13,7 +13,7 @@ export default function UserOrder() {
 
   useEffect(() => {
     axios
-      .get(`https://busy-suspenders.cyclic.app/user/${id}/order`)
+      .get(`https://fimat-group-api.onrender.com/user/${id}/order`)
       .then((res) => setOrder(res.data.orders));
   }, [id]);
 

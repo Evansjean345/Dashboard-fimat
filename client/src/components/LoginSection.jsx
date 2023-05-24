@@ -37,7 +37,7 @@ export default function LoginSection() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://busy-suspenders.cyclic.app/user/login",
+        "https://fimat-group-api.onrender.com/user/login",
         formData
       );
       const token = response.data.token;

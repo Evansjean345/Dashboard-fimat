@@ -56,7 +56,7 @@ const Blog = () => {
     };
 
     axios
-      .put(`https://busy-suspenders.cyclic.app/user/${userInfo._id}`, data)
+      .put(`https://fimat-group-api.onrender.com/user/${userInfo._id}`, data)
       .then((res) => {
         handleOpen();
         console.log(res);

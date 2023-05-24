@@ -9,7 +9,7 @@ function Table() {
 
   useEffect(() => {
     function PerPage() {
-      fetch("https://busy-suspenders.cyclic.app/order/")
+      fetch("https://fimat-group-api.onrender.com/order/")
         .then((data) => data.json())
         .then((data) => setData(data))
         .catch((error) => setData(error));

@@ -10,7 +10,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://busy-suspenders.cyclic.app/order/${id}`)
+      .get(`https://fimat-group-api.onrender.com/order/${id}`)
       .then((res) => setOrder(res.data));
   }, [id]);
 

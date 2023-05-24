@@ -156,9 +156,10 @@ export default function Order() {
     formData.append("delivery_day", delivery_day);
     formData.append("delivery_hours", delivery_hours);
     formData.append("user", user);
+    console.log("formuser", user);
 
     axios
-      .post("https://busy-suspenders.cyclic.app/order/", formData)
+      .post("https://fimat-group-api.onrender.com/order/", formData)
       .then((res) => {
         console.log(res);
         handleOpen();

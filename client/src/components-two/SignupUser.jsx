@@ -89,7 +89,7 @@ export default function SignupUser() {
     setPassword("");
 
     axios
-      .post("https://fimat-group-api.onrender.com/user/signup", formData)
+      .post("https://busy-suspenders.cyclic.app/user/signup", formData)
       .then((res) => {
         console.log(res);
         handleOpen();

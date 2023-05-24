@@ -8,7 +8,7 @@ function UserSection() {
 
   useEffect(() => {
     axios
-      .get(`https://fimat-group-api.onrender.com/user`)
+      .get(`https://busy-suspenders.cyclic.app/user`)
       .then((item) => setData(item.data))
       .catch((error) => console.log(error));
   }, []);

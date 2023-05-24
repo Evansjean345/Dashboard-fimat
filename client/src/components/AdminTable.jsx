@@ -10,14 +10,14 @@ export default function AdminTable() {
 
   useEffect(() => {
     axios
-      .get(`https://fimat-group-api.onrender.com/order`)
+      .get(`https://busy-suspenders.cyclic.app/order`)
       .then((item) => setData(item.data))
       .catch((error) => console.log(error));
   }, []);
 
   const handleUpdate = (id, newStatus) => {
     axios
-      .put(`https://fimat-group-api.onrender.com/order/${id}`, {
+      .put(`https://busy-suspenders.cyclic.app/order/${id}`, {
         status: newStatus,
         invoiceStatus: newStatus,
       })
@@ -32,7 +32,7 @@ export default function AdminTable() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://fimat-group-api.onrender.com/order/${id}`)
+      .delete(`https://busy-suspenders.cyclic.app/order/${id}`)
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
   };

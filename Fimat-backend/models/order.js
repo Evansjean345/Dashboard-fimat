@@ -25,7 +25,6 @@ const orderSchema = new mongoose.Schema({
   },
   totalCost: {
     type: String,
-    required: true,
     minLenght: 3,
     maxLenght: 55,
   },

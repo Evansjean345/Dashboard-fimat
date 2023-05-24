@@ -159,7 +159,7 @@ export default function Order() {
     console.log("formuser", user);
 
     axios
-      .post("https://fimat-group-api.onrender.com/order/", formData)
+      .post("https://busy-suspenders.cyclic.app/order/", formData)
       .then((res) => {
         console.log(res);
         handleOpen();

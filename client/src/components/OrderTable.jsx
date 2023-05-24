@@ -12,7 +12,7 @@ function OrderTable() {
   const [originalData, setOriginalData] = useState([]);
 
   useEffect(() => {
-    fetch("https://fimat-group-api.onrender.com/order/")
+    fetch("https://busy-suspenders.cyclic.app/order/")
       .then((data) => data.json())
       .then((data) => {
         setData(data);

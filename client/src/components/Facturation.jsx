@@ -12,7 +12,7 @@ export default function Facturation() {
 
   useEffect(() => {
     axios
-      .get(`https://fimat-group-api.onrender.com/order/${id}`)
+      .get(`https://busy-suspenders.cyclic.app/order/${id}`)
       .then((res) => setOrder(res.data));
   }, [id]);
 
@@ -22,7 +22,7 @@ export default function Facturation() {
       totalCost: totalCost,
     };
     axios
-      .put(`https://fimat-group-api.onrender.com/order/${id}`, data)
+      .put(`https://busy-suspenders.cyclic.app/order/${id}`, data)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };

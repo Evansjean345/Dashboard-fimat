@@ -1,15 +1,15 @@
-//Multer Config for user signup function
 const multer = require("multer");
 
-const storage = multer.diskStorage({
+/* const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/");
+    cb(null, "uploads");
   },
   filename: function (req, file, cb) {
-    cb(
-      null,
-      req.body.username + "-" + Date.now() + path.extname(file.originalname)
-    );
+    cb(null, file.originalname.split(' ').join('_') )
   },
 });
-exports.upload = multer({ storage: storage });
+exports.upload = multer({ storage: storage });*/
+
+exports.upload = multer({
+  storage: multer.diskStorage({}),
+});

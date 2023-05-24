@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
-import { Formik } from "formik";
 
 export default function Facturation() {
   const { id } = useParams();
@@ -243,8 +242,6 @@ export default function Facturation() {
                     </div>
                   </div>
                 </div>
-                <Formik>
-                  {({ errors, touched, isSubmitting }) => (
                     <form>
                       <div class="mt-16 lg:flex justify-between border-b border-gray-200 pb-16 mb-4">
                         <div class="w-80">
@@ -266,7 +263,7 @@ export default function Facturation() {
                               >
                                 Coût Total
                               </label>
-                              {order.totalCost === undefined ? (
+                              {order.totalCost === undefined || order.totalCost === "" ? (
                                 <input
                                   type="text"
                                   name="totalCost"
@@ -294,22 +291,20 @@ export default function Facturation() {
                                 Statut de la commande
                               </label>
                               <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
-                                {order.status === undefined ? (
+                                {  order.status === undefined ? 
                                   <div className="text-gray-600 font-bold">
                                     loading ...
                                   </div>
-                                ) : order.status === false ? (
+                                : order.status === false ? 
                                   <div className="text-red-600 font-bold">
                                     en attente de facturation
                                   </div>
-                                ) : (
-                                  order.status ===
-                                  true(
+                                 : 
                                     <div className="text-green-600 font-bold">
                                       facture réglée
                                     </div>
-                                  )
-                                )}
+                                  
+                                }
                               </div>
                             </div>
                           </div>
@@ -335,8 +330,6 @@ export default function Facturation() {
                         </div>
                       </div>
                     </form>
-                  )}
-                </Formik>
               </div>
             </div>
           </div>

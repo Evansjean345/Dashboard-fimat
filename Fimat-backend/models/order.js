@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
-const { isEmail } = require("validator");
 const orderSchema = new mongoose.Schema({
   recipient: {
-    name: { type: String, required: true, minLenght: 3, maxLenght: 55 },
-    phone: { type: String, required: true, minLenght: 3, maxLenght: 55 },
-    address: { type: String, required: true, minLenght: 3, maxLenght: 55 },
-  },
-  delivery_person: {
     name: { type: String, required: true, minLenght: 3, maxLenght: 55 },
     phone: { type: String, required: true, minLenght: 3, maxLenght: 55 },
     address: { type: String, required: true, minLenght: 3, maxLenght: 55 },
@@ -39,6 +33,15 @@ const orderSchema = new mongoose.Schema({
   tracking: {
     type: String,
   },
+  packs: { type: String, required: true },
+  goods_price: { type: String, required: true },
+  reception: { type: String, required: true },
+  comments: { type: String, required: true },
+  transport: { type: String, required: true },
+  orderUrl: { type: String },
+  delivery_day: { type: String },
+  delivery_hours: { type: String, required: true },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   date: {
     type: String,
   },

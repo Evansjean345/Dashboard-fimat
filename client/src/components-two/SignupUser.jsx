@@ -92,6 +92,7 @@ export default function SignupUser() {
       .post("https://fimat-group-api.onrender.com/user/signup", formData)
       .then((res) => {
         console.log(res);
+        handleOpen();
       })
       .catch((err) => {
         console.log(err);
@@ -99,6 +100,7 @@ export default function SignupUser() {
       });
 
     console.log(formData);
+    handleLoader();
   };
 
   return (
@@ -124,31 +126,9 @@ export default function SignupUser() {
               </p>
 
               <div class="mt-6">
-                <h1 class="text-gray-500 ">
-                  Sélectionnez le type de compte
-                </h1>
+                <h1 class="text-gray-500 ">Créer votre compte gratuitement</h1>
 
                 <div class="mt-3 md:flex md:items-center md:-mx-2">
-                  <Link to="/signup/admin">
-                    <button class="flex justify-center w-full px-6 py-3 text-[#db6013] border border-[#db6013]  bg-blue-white rounded-lg md:w-auto md:mx-2 focus:outline-none">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-
-                      <span class="mx-2">administrateur</span>
-                    </button>
-                  </Link>
                   <Link to="/signup/user">
                     <button class="flex justify-center w-full px-6 py-3 mt-4 text-white border bg-[#db6013] border-[#db6013] rounded-lg md:mt-0 md:w-auto md:mx-2  focus:outline-none">
                       <svg

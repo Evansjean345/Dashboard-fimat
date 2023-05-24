@@ -100,6 +100,7 @@ export default function SignupSection() {
       });
 
     console.log(formData);
+    handleLoader()
   };
 
   return (
@@ -403,7 +404,6 @@ export default function SignupSection() {
                         class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#db6013] focus:outline-none focus:ring focus:ring-[#db6013] focus:ring-opacity-50"
                         type="submit"
                         disabled={isSubmitting}
-                        onClick={handleLoader}
                       >
                         <span>S'enregistrer </span>
 

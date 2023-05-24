@@ -8,6 +8,7 @@ router.post("/user/login", userCtrl.login);
 router.post("user/logout", userCtrl.logout);
 router.get("/user", userCtrl.getUser);
 router.get("/user/:id", userCtrl.getOneUser);
+router.get("/user/:id/order",userCtrl.getOrderByUser)
 router.put("/user/:id", userCtrl.modifyUser);
 router.delete("/user/:id", userCtrl.deleteUser);
 

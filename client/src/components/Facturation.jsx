@@ -294,14 +294,21 @@ export default function Facturation() {
                                 Statut de la commande
                               </label>
                               <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
-                                {order.status === false ? (
+                                {order.status === undefined ? (
+                                  <div className="text-gray-600 font-bold">
+                                    loading ...
+                                  </div>
+                                ) : order.status === false ? (
                                   <div className="text-red-600 font-bold">
                                     en attente de facturation
                                   </div>
                                 ) : (
-                                  <div className="text-green-600 font-bold">
-                                    Facturé réglée
-                                  </div>
+                                  order.status ===
+                                  true(
+                                    <div className="text-green-600 font-bold">
+                                      facture réglée
+                                    </div>
+                                  )
                                 )}
                               </div>
                             </div>
@@ -309,10 +316,7 @@ export default function Facturation() {
                           <div class="md:flex items-center lg:ml-24 mt-8">
                             <div class="md:w-64">
                               <div
-                                onClick={() => {
-                                  updateOrder();
-                                  window.location.reload();
-                                }}
+                                onClick={updateOrder}
                                 className="w-full bg-indigo-700 hover:bg-white hover:scale-75 cursor-pointer hover:text-indigo-700 hover:border hover:border-indigo-700 transition-all p-3 mt-3 text-white border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none"
                               >
                                 <button>soummettre</button>

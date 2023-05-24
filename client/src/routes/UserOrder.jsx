@@ -92,6 +92,9 @@ export default function UserOrder() {
     />
   );
 
+  const price = order.find((obj) => obj.totalCost !== undefined);
+  const Noprice = order.find((obj) => obj.totalCost === undefined);
+
   return (
     <>
       <div className="flex flex-col h-full  xl:flex-row ">
@@ -228,14 +231,14 @@ export default function UserOrder() {
                                   {item.packs} packs
                                 </td>
                                 <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                                  {order.totalCost === undefined ? (
+                                  {price === undefined ? (
                                     facture
                                   ) : (
                                     <Chip
                                       variant="ghost"
-                                      color="green"
+                                      color={item.totalCost !== undefined ? "green" : "red"}
                                       size="sm"
-                                      value={item.totalCost}
+                                      value={item.totalCost === undefined ? "en attente de facturation" : item.totalCost}
                                       icon={
                                         <span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-green-900" />
                                       }

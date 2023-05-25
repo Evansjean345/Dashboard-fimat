@@ -143,6 +143,12 @@ export default function AdminTable() {
                       >
                         Destinataire
                       </th>
+                      <th
+                        scope="col"
+                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500"
+                      >
+                        Expéditeur
+                      </th>
 
                       <th
                         scope="col"
@@ -225,6 +231,13 @@ export default function AdminTable() {
                             <br />
                             {item.recipient && item.recipient.phone}
                           </td>
+                          <td class="px-16 py-4 text-sm text-gray-500  whitespace-nowrap">
+                            {`${item.user && item.user.name} ${
+                              item.user && item.user.lastname
+                            } `}
+                            <br />
+                            {item.user && item.user.phone}
+                          </td>
                           <td class="px-2 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                             <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-50">
                               {item.status && item.invoiceStatus === true
@@ -255,7 +268,8 @@ export default function AdminTable() {
                             />
                           </td>
                           <td class="px-16 py-4 text-sm text-gray-500  whitespace-nowrap">
-                            {item.totalCost === undefined ? (
+                            {item.totalCost === undefined ||
+                            item.totalCost === "" ? (
                               <Chip
                                 variant="ghost"
                                 color="red"
@@ -291,7 +305,11 @@ export default function AdminTable() {
                               </Button>
 
                               <Button
-                                className="flex items-center"
+                                className={
+                                  item.status && item.invoiceStatus === true
+                                    ? "hidden"
+                                    : "flex items-center"
+                                }
                                 size="sm"
                                 onClick={() => {
                                   handleUpdate(

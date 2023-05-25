@@ -238,7 +238,8 @@ export default function AssistanceSection() {
                   </div>
                   <p className="mt-3 text-xs leading-[15px] text-gray-600 px-7">
                     Expliquez nous plus précisement le type de problème que vous
-                    rencontrez NB:mentionnez votre nom svp ou votre mail svp
+                    rencontrez NB:mentionnez votre nom svp et votre mail ou
+                    votre numero de telephone svp
                   </p>
                   <hr className="h-[1px] bg-gray-100 my-14" />
                   <div className="flex flex-col flex-wrap items-center justify-center w-full px-7 lg:flex-row lg:justify-end md:justify-end gap-x-4 gap-y-4">
@@ -261,10 +262,9 @@ export default function AssistanceSection() {
         </div>
       </form>
       <Dialog open={open} handler={handleOpen} size="xl">
-        <DialogHeader>Votre Compte a bien été crée avec succès</DialogHeader>
+        <DialogHeader>Votre message à bien été transféré</DialogHeader>
         <DialogBody divider className="text-semibold">
-          Nous vous prions de cliquer sur le bouton-ci dessous afin que vous
-          puissez vous connecter
+          Notre équipe se chargera de vous répondres dans les plus brefs delais
         </DialogBody>
         <DialogFooter>
           <Button
@@ -274,7 +274,7 @@ export default function AssistanceSection() {
               window.location.reload();
             }}
           >
-            <span>se connecter</span>
+            <span>fermer</span>
           </Button>
         </DialogFooter>
       </Dialog>

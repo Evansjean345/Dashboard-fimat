@@ -1,13 +1,24 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
-
+import {
+  Input,
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
 export default function Facturation() {
   const { id } = useParams();
   const [order, setOrder] = useState({});
   const [totalCost, setTotalCost] = useState("");
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleOpen = () => setOpen(!open);
 
   useEffect(() => {
     axios
@@ -24,6 +35,7 @@ export default function Facturation() {
       .put(`https://fimat-group-api.onrender.com/order/${id}`, data)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+    handleOpen();
   };
 
   console.log(order);
@@ -242,99 +254,117 @@ export default function Facturation() {
                     </div>
                   </div>
                 </div>
-                    <form>
-                      <div class="mt-16 lg:flex justify-between border-b border-gray-200 pb-16 mb-4">
-                        <div class="w-80">
-                          <div class="flex items-center">
-                            <h1 class="text-xl font-medium pr-2 leading-5 text-gray-800">
-                              Facture
-                            </h1>
-                          </div>
-                          <p class="mt-4 text-sm leading-5 text-gray-600">
-                            Fixer le montant de la commande
-                          </p>
+                <form>
+                  <div class="mt-16 lg:flex justify-between border-b border-gray-200 pb-16 mb-4">
+                    <div class="w-80">
+                      <div class="flex items-center">
+                        <h1 class="text-xl font-medium pr-2 leading-5 text-gray-800">
+                          Facture
+                        </h1>
+                      </div>
+                      <p class="mt-4 text-sm leading-5 text-gray-600">
+                        Fixer le montant de la commande
+                      </p>
+                    </div>
+                    <div>
+                      <div class="md:flex items-center lg:ml-24 lg:mt-0 mt-4">
+                        <div class="md:w-64">
+                          <label
+                            class="text-sm leading-none text-gray-800"
+                            id="totalCost"
+                          >
+                            Coût Total
+                          </label>
+                          {order.totalCost === undefined ||
+                          order.totalCost === "" ? (
+                            <input
+                              type="text"
+                              name="totalCost"
+                              placeholder={
+                                order.totalCost === undefined
+                                  ? "fixer le prix "
+                                  : order.totalCost
+                              }
+                              onChange={(e) => {
+                                setTotalCost(e.target.value);
+                              }}
+                              className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
+                            />
+                          ) : (
+                            <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
+                              {order.totalCost}
+                            </div>
+                          )}
                         </div>
-                        <div>
-                          <div class="md:flex items-center lg:ml-24 lg:mt-0 mt-4">
-                            <div class="md:w-64">
-                              <label
-                                class="text-sm leading-none text-gray-800"
-                                id="totalCost"
-                              >
-                                Coût Total
-                              </label>
-                              {order.totalCost === undefined || order.totalCost === "" ? (
-                                <input
-                                  type="text"
-                                  name="totalCost"
-                                  placeholder={
-                                    order.totalCost === undefined
-                                      ? "fixer le prix "
-                                      : order.totalCost
-                                  }
-                                  onChange={(e) => {
-                                    setTotalCost(e.target.value);
-                                  }}
-                                  className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
-                                />
-                              ) : (
-                                <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
-                                  {order.totalCost}
-                                </div>
-                              )}
-                            </div>
-                            <div class="md:w-64 md:ml-12 md:mt-0 mt-4">
-                              <label
-                                class="text-sm leading-none text-gray-800"
-                                id="transport"
-                              >
-                                Statut de la commande
-                              </label>
-                              <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
-                                {  order.status === undefined ? 
-                                  <div className="text-gray-600 font-bold">
-                                    loading ...
-                                  </div>
-                                : order.status === false ? 
-                                  <div className="text-red-600 font-bold">
-                                    en attente de facturation
-                                  </div>
-                                 : 
-                                    <div className="text-green-600 font-bold">
-                                      facture réglée
-                                    </div>
-                                  
-                                }
+                        <div class="md:w-64 md:ml-12 md:mt-0 mt-4">
+                          <label
+                            class="text-sm leading-none text-gray-800"
+                            id="transport"
+                          >
+                            Statut de la commande
+                          </label>
+                          <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
+                            {order.status === undefined ? (
+                              <div className="text-gray-600 font-bold">
+                                loading ...
                               </div>
-                            </div>
-                          </div>
-                          <div class="md:flex items-center lg:ml-24 mt-8">
-                            <div class="md:w-64">
-                              <div
-                                onClick={updateOrder}
-                                className="w-full bg-indigo-700 hover:bg-white hover:scale-75 cursor-pointer hover:text-indigo-700 hover:border hover:border-indigo-700 transition-all p-3 mt-3 text-white border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none"
-                              >
-                                <button>soummettre</button>
+                            ) : order.status === false ? (
+                              <div className="text-red-600 font-bold">
+                                en attente de facturation
                               </div>
-                            </div>
-                            <div class="md:w-64 md:ml-12 md:mt-0 mt-4">
-                              <div className="w-full p-3 mt-3 cursor-pointer hover:text-gray-900 transition-all bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-blue-600">
-                                <Link
-                                  to={`/dashboard/admin/order/details/${id}`}
-                                >
-                                  {order.tracking}
-                                </Link>
+                            ) : (
+                              <div className="text-green-600 font-bold">
+                                facture réglée
                               </div>
-                            </div>
+                            )}
                           </div>
                         </div>
                       </div>
-                    </form>
+                      <div class="md:flex items-center lg:ml-24 mt-8">
+                        <div class="md:w-64">
+                          <div
+                            onClick={updateOrder}
+                            className="w-full bg-indigo-700 hover:bg-white hover:scale-75 cursor-pointer hover:text-indigo-700 hover:border hover:border-indigo-700 transition-all p-3 mt-3 text-white border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none"
+                          >
+                            <button>soummettre</button>
+                          </div>
+                        </div>
+                        <div class="md:w-64 md:ml-12 md:mt-0 mt-4">
+                          <div className="w-full p-3 mt-3 cursor-pointer hover:text-gray-900 transition-all bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-blue-600">
+                            <Link to={`/dashboard/admin/order/details/${id}`}>
+                              {order.tracking}
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Dialog open={open} handler={handleOpen} size="xl">
+        <DialogHeader>Le Coût Total a bien été enregistré</DialogHeader>
+        <DialogBody divider className="text-semibold">
+          Nous vous prions de cliquer sur le bouton ci-dessous pour voir la
+          facture et en informer votre client avant de confirmer la facture dans
+          la partie{" "}
+          <span className="font-bold text-red-500">
+            <Link to={`dashboard/admin/order-administration`}>
+              Administration des commandes
+            </Link>
+          </span>
+        </DialogBody>
+        <DialogFooter>
+          <Link to={`/dashboard/admin/order/details/${id}`}>
+            <Button variant="gradient" color="green">
+              <span>Voir la facture</span>
+            </Button>
+          </Link>
+        </DialogFooter>
+      </Dialog>
     </>
   );
 }

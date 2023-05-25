@@ -14,14 +14,12 @@ export default function SearchBar() {
     fetchOrder();
   }, []);
 
-  console.log("data", data);
 
   const onChange = (event) => {
     setValue(event.target.value);
   };
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
-    console.log("search", searchTerm);
   };
 
   return (

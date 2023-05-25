@@ -17,6 +17,8 @@ export default function UserOrder() {
       .then((res) => setOrder(res.data.orders));
   }, [id]);
 
+ console.log("order",order);
+
   const recordsPerPage = 7;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;

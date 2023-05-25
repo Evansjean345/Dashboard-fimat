@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../layouts/SearchBar";
 import { CardFooter, Button, IconButton, Chip } from "@material-tailwind/react";
+import axios from "axios";
 
 function Table() {
   const [data, setData] = useState([]);
@@ -134,6 +135,9 @@ function Table() {
                   Destinataire
                 </th>
                 <th className="font-semibold font-mono text-left pl-20">
+                  Expéditeur
+                </th>
+                <th className="font-semibold font-mono text-left pl-20">
                   Status
                 </th>
                 <th className="font-semibold font-mono text-left pl-20">
@@ -187,6 +191,16 @@ function Table() {
                       {item.recipient && item.recipient.phone}
                     </p>
                   </td>
+                  <td className="pl-20">
+                    <p className="font-medium">
+                      {`${item.user && item.user.name} ${
+                        item.user && item.user.lastname
+                      } `}
+                    </p>
+                    <p className="text-xs leading-3 font-medium text-gray-600 mt-2">
+                      {item.user && item.user.phone}
+                    </p>
+                  </td>
                   <td className="pl-16">
                     <p className="font-medium">
                       {item.status === true ? valid : invalid}
@@ -207,7 +221,7 @@ function Table() {
                   </td>
                   <td className="pl-20">
                     <p className="font-medium">
-                      {item.totalCost === undefined ? (
+                      {item.totalCost === undefined || item.totalCost === "" ? (
                         <Chip
                           variant="ghost"
                           color="red"

@@ -26,6 +26,7 @@ const OrderDetails = () => {
     reception,
     delivery_day,
     delivery_hours,
+    user,
   } = order;
 
   return (
@@ -43,23 +44,36 @@ const OrderDetails = () => {
             <div className="w-1/2 border border-black px-2 py-4">
               {" "}
               <h3>Destinataire</h3>
-              <p>nom du destinataire: {recipient && recipient.name}</p>
-              <p>numéro du destinataire: {recipient && recipient.phone}</p>
-              <p>adresse du destinataire: {recipient && recipient.address}</p>
-              <p>Coût Total: {totalCost}</p>
+              <p className="mt-2">
+                nom du destinataire: {recipient && recipient.name} 
+              </p>
+              <p className="mt-1">
+                numéro du destinataire: {recipient && recipient.phone}
+              </p>
+              <p className="mt-1">
+                adresse du destinataire: {recipient && recipient.address}
+              </p>
+              <p className="mt-1">Coût Total: {totalCost}</p>
+              <h3 className="mt-3">Expéditeur</h3>
+              <p className="mt-2">
+                nom du destinataire: {user && user.name}   {user && user.lastname} 
+              </p>
+              <p className="mt-1">
+                numéro du destinataire:  {user && user.phone} 
+              </p>
             </div>
             <div className="w-1/2 border border-black px-2 py-4">
-              <h3>Details de la facture</h3>
-              <p>numero de la commande: {tracking}</p>
-              <p>date de la commande: {date}</p>
-              <p>moyen de paiyement: {payement}</p>
-              <p>Prix de la marchandise : {goods_price}</p>
-              <p>Lieu de reception du colis : {reception}</p>
-              <p>
+              <h3 className="mt-1">Details de la facture</h3>
+              <p className="mt-2">numero de la commande: {tracking}</p>
+              <p className="mt-1">date de la commande: {date}</p>
+              <p className="mt-1">moyen de paiyement: {payement}</p>
+              <p className="mt-1">Prix de la marchandise : {goods_price}</p>
+              <p className="mt-1">Lieu de reception du colis : {reception}</p>
+              <p className="mt-1">
                 Jour et heure de livraison : {delivery_day} / {delivery_hours} h
               </p>
-              <p>Destination: {destination}</p>
-              <p>Total Cost: {totalCost}</p>
+              <p className="mt-1">Destination: {destination}</p>
+              <p className="mt-1">Total Cost: {totalCost}</p>
             </div>
             {orderUrl === null ? (
               <img

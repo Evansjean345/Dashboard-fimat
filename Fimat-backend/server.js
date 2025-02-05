@@ -4,25 +4,16 @@ const port = 4000;
 require("dotenv").config({ path: "./config/.env" });
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-<<<<<<< HEAD
 const mongoose = require("mongoose");
-=======
-const cors = require('cors')
-const mongoose = require("mongoose");
-const path = require('path')
->>>>>>> 545eb86b (first commit)
 const UserRoutes = require("./routes/user");
 const OrderRoutes = require("./routes/order");
 const { checkUser, requireAuth } = require("./middleware/auth");
 
 app.get("/", (req, res) => res.send("Welcome to Fimat Group Api"));
-<<<<<<< HEAD
 //active Routes
 app.get("/ping" , (req,res)=>{
  res.send("OK")
 })
-=======
->>>>>>> 545eb86b (first commit)
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening on port ${port}!`);
@@ -41,10 +32,6 @@ app.use((req, res, next) => {
   next();
 });
 
-<<<<<<< HEAD
-=======
-app.use(cors())
->>>>>>> 545eb86b (first commit)
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -66,7 +53,3 @@ app.get("/jwtid", requireAuth, (req, res) => {
 });
 app.use(UserRoutes);
 app.use(OrderRoutes);
-<<<<<<< HEAD
-=======
-app.use("/uploads",express.static(path.join(__dirname,"uploads")))
->>>>>>> 545eb86b (first commit)

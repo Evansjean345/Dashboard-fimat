@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 import { createContext, useContext, useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -33,21 +33,13 @@ const AuthProvider = ({ children }) => {
 
 
   const getUserInfo = async () => {
-<<<<<<< HEAD
     const response = await fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`);
-=======
-    const response = await fetch(`http://localhost:4000/user/${userId}`);
->>>>>>> 545eb86b (first commit)
     const data = await response.json();
     return data;
   };
 
   const getOrderByUser = async () => {
-<<<<<<< HEAD
     const response = await fetch(`${process.env.REACT_APP_API_URL}/user/${userId}/order`);
-=======
-    const response = await fetch(`http://localhost:4000/user/${userId}/order`);
->>>>>>> 545eb86b (first commit)
     const data = await response.json();
     return data;
   };

@@ -12,16 +12,12 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
-<<<<<<< HEAD
 import Loader from "../utils/Loader";
-=======
->>>>>>> 545eb86b (first commit)
 
 export default function SignupSection() {
   //gestion
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(false);
-<<<<<<< HEAD
   const [loader, setLoader] = useState(false);
 
   const handleLoader = () => {
@@ -31,8 +27,6 @@ export default function SignupSection() {
     }, 7000);
   };
 
-=======
->>>>>>> 545eb86b (first commit)
   const navigate = useNavigate();
 
   //
@@ -43,11 +37,7 @@ export default function SignupSection() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-<<<<<<< HEAD
   const [isAdmin, setIsAdmin] = useState("true");
-=======
-  const [isAdmin, setIsAdmin] = useState(true);
->>>>>>> 545eb86b (first commit)
   const [profile, setProfile] = useState("");
 
   const validationSchema = Yup.object().shape({
@@ -61,10 +51,7 @@ export default function SignupSection() {
     password: Yup.string().required(
       "Le mot de passe doit contenir au moins 4 caractères"
     ),
-<<<<<<< HEAD
     isAdmin: Yup.string().required(),
-=======
->>>>>>> 545eb86b (first commit)
     imgUrl: Yup.mixed().required("l'image est requise"),
   });
 
@@ -102,11 +89,7 @@ export default function SignupSection() {
     setPassword("");
 
     axios
-<<<<<<< HEAD
       .post(`${process.env.REACT_APP_API_URL}/user/signup`, formData)
-=======
-      .post("http://localhost:4000/user/signup", formData)
->>>>>>> 545eb86b (first commit)
       .then((res) => {
         console.log(res);
         handleOpen();
@@ -117,66 +100,38 @@ export default function SignupSection() {
       });
 
     console.log(formData);
-<<<<<<< HEAD
     handleLoader()
-=======
->>>>>>> 545eb86b (first commit)
   };
 
   return (
     <>
-<<<<<<< HEAD
       <section class="bg-white ">
-=======
-      <section class="bg-white dark:bg-gray-900">
->>>>>>> 545eb86b (first commit)
         <div class="flex justify-center min-h-screen">
           <div
             class="hidden bg-cover lg:block lg:w-2/5"
             style={{
-<<<<<<< HEAD
               backgroundImage: "url(/images/admin-text.png)",
-=======
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1cmVhdXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')",
->>>>>>> 545eb86b (first commit)
             }}
           ></div>
 
           <div class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
             <div class="w-full">
-<<<<<<< HEAD
               <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize ">
                 Obtenez Votre Compte Gratuit Dès Maintenant.
               </h1>
 
               <p class="mt-4 text-gray-500 ">
-=======
-              <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
-                Obtenez Votre Compte Gratuit Dès Maintenant.
-              </h1>
-
-              <p class="mt-4 text-gray-500 dark:text-gray-400">
->>>>>>> 545eb86b (first commit)
                 Commençons par vous préparer afin que vous puissiez vérifier
                 votre compte personnel et commencer à configurer votre profil.
               </p>
 
               <div class="mt-6">
-<<<<<<< HEAD
                 <h1 class="text-gray-500 ">
-=======
-                <h1 class="text-gray-500 dark:text-gray-300">
->>>>>>> 545eb86b (first commit)
                   Sélectionnez le type de compte
                 </h1>
 
                 <div class="mt-3 md:flex md:items-center md:-mx-2">
-<<<<<<< HEAD
                   <button class="flex justify-center w-full px-6 py-3 text-white bg-[#db6013] rounded-lg md:w-auto md:mx-2 focus:outline-none">
-=======
-                  <button class="flex justify-center w-full px-6 py-3 text-white bg-blue-500 rounded-lg md:w-auto md:mx-2 focus:outline-none">
->>>>>>> 545eb86b (first commit)
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-6 h-6"
@@ -195,11 +150,7 @@ export default function SignupSection() {
                     <span class="mx-2">administrateur</span>
                   </button>
                   <Link to="/signup/user">
-<<<<<<< HEAD
                     <button class="flex justify-center w-full px-6 py-3 mt-4 text-[#db6013] border border-[#db6013] rounded-lg md:mt-0 md:w-auto md:mx-2 focus:outline-none">
-=======
-                    <button class="flex justify-center w-full px-6 py-3 mt-4 text-blue-500 border border-blue-500 rounded-lg md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none">
->>>>>>> 545eb86b (first commit)
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="w-6 h-6"
@@ -229,10 +180,7 @@ export default function SignupSection() {
                   phone: phone,
                   email: email,
                   password: password,
-<<<<<<< HEAD
                   isAdmin: isAdmin,
-=======
->>>>>>> 545eb86b (first commit)
                   imgUrl: imgUrl,
                 }}
                 validationSchema={validationSchema}
@@ -252,19 +200,11 @@ export default function SignupSection() {
                   >
                     <div>
                       <label
-<<<<<<< HEAD
                         class="block mb-2 text-sm text-gray-600 "
                         htmlFor="name"
                         enctype
                       >
                         Prénoms
-=======
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-                        htmlFor="name"
-                        enctype
-                      >
-                        First Name
->>>>>>> 545eb86b (first commit)
                       </label>
                       <Field
                         type="text"
@@ -275,17 +215,10 @@ export default function SignupSection() {
                           setName(e.target.value);
                         }}
                         onBlur={handleBlur}
-<<<<<<< HEAD
                         class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.name && errors.name && (
                         <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
-=======
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                      />
-                      {touched.name && errors.name && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
->>>>>>> 545eb86b (first commit)
                           {errors.name}
                         </div>
                       )}
@@ -293,17 +226,10 @@ export default function SignupSection() {
 
                     <div>
                       <label
-<<<<<<< HEAD
                         class="block mb-2 text-sm text-gray-600"
                         htmlFor="lastname"
                       >
                         Nom
-=======
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-                        htmlFor="lastname"
-                      >
-                        Last name
->>>>>>> 545eb86b (first commit)
                       </label>
                       <Field
                         type="text"
@@ -312,34 +238,20 @@ export default function SignupSection() {
                         value={lastname}
                         onChange={(e) => setLastname(e.target.value)}
                         onBlur={handleBlur}
-<<<<<<< HEAD
                         class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.name && errors.lastname && (
                         <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
-=======
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                      />
-                      {touched.name && errors.lastname && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
->>>>>>> 545eb86b (first commit)
                           {errors.lastname}
                         </div>
                       )}
                     </div>
                     <div>
                       <label
-<<<<<<< HEAD
                         class="block mb-2 text-sm text-gray-600 "
                         htmlFor="username"
                       >
                         Nom d'utilisateur
-=======
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-                        htmlFor="username"
-                      >
-                        Username
->>>>>>> 545eb86b (first commit)
                       </label>
                       <Field
                         type="text"
@@ -348,7 +260,6 @@ export default function SignupSection() {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         onBlur={handleBlur}
-<<<<<<< HEAD
                         class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       <Field
@@ -360,12 +271,6 @@ export default function SignupSection() {
                       />
                       {touched.name && errors.username && (
                         <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
-=======
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                      />
-                      {touched.name && errors.username && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
->>>>>>> 545eb86b (first commit)
                           {errors.username}
                         </div>
                       )}
@@ -373,17 +278,10 @@ export default function SignupSection() {
 
                     <div>
                       <label
-<<<<<<< HEAD
                         class="block mb-2 text-sm text-gray-600 "
                         htmlFor="phone"
                       >
                         Numéro de téléphone
-=======
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-                        htmlFor="phone"
-                      >
-                        Phone number
->>>>>>> 545eb86b (first commit)
                       </label>
                       <input
                         type="text"
@@ -392,17 +290,10 @@ export default function SignupSection() {
                         value={phone}
                         onBlur={handleBlur}
                         onChange={(e) => setPhone(e.target.value)}
-<<<<<<< HEAD
                         class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.phone && errors.phone && (
                         <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
-=======
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                      />
-                      {touched.phone && errors.phone && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
->>>>>>> 545eb86b (first commit)
                           {errors.phone}
                         </div>
                       )}
@@ -410,17 +301,10 @@ export default function SignupSection() {
 
                     <div>
                       <label
-<<<<<<< HEAD
                         class="block mb-2 text-sm text-gray-600 "
                         htmlFor="email"
                       >
                         Adresse mail
-=======
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-                        htmlFor="email"
-                      >
-                        Email address
->>>>>>> 545eb86b (first commit)
                       </label>
                       <Field
                         type="email"
@@ -429,17 +313,10 @@ export default function SignupSection() {
                         value={email}
                         onBlur={handleBlur}
                         onChange={(e) => setEmail(e.target.value)}
-<<<<<<< HEAD
                         class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.email && errors.email && (
                         <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
-=======
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                      />
-                      {touched.email && errors.email && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
->>>>>>> 545eb86b (first commit)
                           {errors.email}
                         </div>
                       )}
@@ -447,17 +324,10 @@ export default function SignupSection() {
 
                     <div>
                       <label
-<<<<<<< HEAD
                         class="block mb-2 text-sm text-gray-600 "
                         htmlFor="password"
                       >
                         Mot de passe
-=======
-                        class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-                        htmlFor="password"
-                      >
-                        Password
->>>>>>> 545eb86b (first commit)
                       </label>
                       <Field
                         type="password"
@@ -466,17 +336,10 @@ export default function SignupSection() {
                         value={password}
                         onBlur={handleBlur}
                         onChange={(e) => setPassword(e.target.value)}
-<<<<<<< HEAD
                         class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-[#db6013]  focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                       {touched.password && errors.password && (
                         <div className="w-full border flex  py-1 bg-green-200 text-gray-600 border-green-500 px-6 mt-1 rounded-lg text-sm">
-=======
-                        class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                      />
-                      {touched.password && errors.password && (
-                        <div className="w-full border flex  py-1 bg-red-200 text-gray-600 border-red-500 px-6 mt-1 rounded-lg text-sm">
->>>>>>> 545eb86b (first commit)
                           {errors.password}
                         </div>
                       )}
@@ -528,7 +391,6 @@ export default function SignupSection() {
                     )}
                     <br />
 
-<<<<<<< HEAD
                     {loader ? (
                       <div
                         className="w-72 flex items-center justify-center h-4 px-4 py-8
@@ -559,28 +421,6 @@ export default function SignupSection() {
                         </svg>
                       </button>
                     )}
-=======
-                    <button
-                      class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                      type="submit"
-                      disabled={isSubmitting}
-                    >
-                      <span>S'enregistrer </span>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5 rtl:-scale-x-100"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </button>
->>>>>>> 545eb86b (first commit)
                   </form>
                 )}
               </Formik>
@@ -589,11 +429,7 @@ export default function SignupSection() {
           </div>
         </div>
         {/* commande confirmée */}
-<<<<<<< HEAD
         <Dialog open={open} handler={handleOpen} size="xl">
-=======
-        <Dialog open={open} handler={handleOpen}>
->>>>>>> 545eb86b (first commit)
           <DialogHeader>Votre Compte a bien été crée avec succès</DialogHeader>
           <DialogBody divider className="text-semibold">
             Nous vous prions de cliquer sur le bouton-ci dessous afin que vous
@@ -604,11 +440,7 @@ export default function SignupSection() {
               variant="gradient"
               color="green"
               onClick={() => {
-<<<<<<< HEAD
                 navigate("/login");
-=======
-                navigate("/");
->>>>>>> 545eb86b (first commit)
               }}
             >
               <span>se connecter</span>
@@ -616,11 +448,7 @@ export default function SignupSection() {
           </DialogFooter>
         </Dialog>
         {/* commande refusée*/}
-<<<<<<< HEAD
         <Dialog open={error} handler={handleError} size="xl">
-=======
-        <Dialog open={error} handler={handleError}>
->>>>>>> 545eb86b (first commit)
           <DialogHeader>
             Veuillez remplir tous les champs pour créer un compte
           </DialogHeader>

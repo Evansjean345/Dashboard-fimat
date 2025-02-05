@@ -10,22 +10,14 @@ export default function AdminTable() {
 
   useEffect(() => {
     axios
-<<<<<<< HEAD
       .get(`${process.env.REACT_APP_API_URL}/order`)
-=======
-      .get(`http://localhost:4000/order`)
->>>>>>> 545eb86b (first commit)
       .then((item) => setData(item.data))
       .catch((error) => console.log(error));
   }, []);
 
   const handleUpdate = (id, newStatus) => {
     axios
-<<<<<<< HEAD
       .put(`${process.env.REACT_APP_API_URL}/order/${id}`, {
-=======
-      .put(`http://localhost:4000/order/${id}`, {
->>>>>>> 545eb86b (first commit)
         status: newStatus,
         invoiceStatus: newStatus,
       })
@@ -40,11 +32,7 @@ export default function AdminTable() {
 
   const handleDelete = (id) => {
     axios
-<<<<<<< HEAD
       .delete(`${process.env.REACT_APP_API_URL}/order/${id}`)
-=======
-      .delete(`http://localhost:4000/order/${id}`)
->>>>>>> 545eb86b (first commit)
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
   };
@@ -98,7 +86,6 @@ export default function AdminTable() {
 
   return (
     <>
-<<<<<<< HEAD
       <section class="container px-4 mx-auto py-12 h-[100vh]">
         <div class="flex flex-col">
           <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -110,19 +97,6 @@ export default function AdminTable() {
                       <th
                         scope="col"
                         class="py-3.5 px-4 text-sm  text-left rtl:text-right text-gray-500"
-=======
-      <section class="container px-4 mx-auto py-12">
-        <div class="flex flex-col">
-          <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                  <thead class="bg-gray-50 dark:bg-gray-800 font-semibold font-mono">
-                    <tr>
-                      <th
-                        scope="col"
-                        class="py-3.5 px-4 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         <div class="flex items-center gap-x-3">
                           <button class="flex items-center gap-x-2">
@@ -159,17 +133,12 @@ export default function AdminTable() {
 
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Details
                       </th>
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500"
                       >
                         Destinataire
@@ -184,87 +153,49 @@ export default function AdminTable() {
                       <th
                         scope="col"
                         class="px-8 py-3.5 text-sm  text-left rtl:text-right text-gray-500"
-=======
-                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
-                      >
-                        Destinataire
-                      </th>
-
-                      <th
-                        scope="col"
-                        class="px-8 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Status
                       </th>
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Destination
                       </th>
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Moyen de paiement
                       </th>
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         lieu de reception du colis
                       </th>
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-12 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Nombres de packs
                       </th>
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Prix de la marchandise
                       </th>
 
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-4 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Jour de livraison et heure de la livraison
                       </th>
                       <th
                         scope="col"
-<<<<<<< HEAD
                         class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 "
-=======
-                        class="px-16 py-3.5 text-sm  text-left rtl:text-right text-gray-500 dark:text-gray-400"
->>>>>>> 545eb86b (first commit)
                       >
                         Coût Total
                       </th>
@@ -274,19 +205,11 @@ export default function AdminTable() {
                       </th>
                     </tr>
                   </thead>
-<<<<<<< HEAD
                   <tbody class="bg-white divide-y divide-gray-200 font-semibold">
                     {currentData.map((item) => {
                       return (
                         <tr key={item._id}>
                           <td class="px-4 py-4 text-sm font-medium text-gray-700  whitespace-nowrap">
-=======
-                  <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 font-semibold">
-                    {currentData.map((item) => {
-                      return (
-                        <tr key={item._id}>
-                          <td class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
->>>>>>> 545eb86b (first commit)
                             <div class=" items-center gap-x-3 text-indigo-500">
                               <Link
                                 to={`/dashboard/admin/order/facturation/${item._id}`}
@@ -300,7 +223,6 @@ export default function AdminTable() {
                               </span>
                             </div>
                           </td>
-<<<<<<< HEAD
                           <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.comments}
                           </td>
@@ -315,15 +237,6 @@ export default function AdminTable() {
                             } `}
                             <br />
                             {item.user && item.user.phone}
-=======
-                          <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.comments}
-                          </td>
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.recipient.name}
-                            <br />
-                            {item.recipient.phone}
->>>>>>> 545eb86b (first commit)
                           </td>
                           <td class="px-2 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                             <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-50">
@@ -332,7 +245,6 @@ export default function AdminTable() {
                                 : invalid}
                             </div>
                           </td>
-<<<<<<< HEAD
                           <td class="px-12 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.destination}
                           </td>
@@ -350,38 +262,14 @@ export default function AdminTable() {
                             <br />
                           </td>
                           <td class="px-8 py-4 text-sm text-gray-500  whitespace-nowrap">
-=======
-                          <td class="px-12 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.destination}
-                          </td>
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            <Chip color="gray" value={item.payement} />
-                          </td>
-                          <td class="px-12 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.reception}
-                          </td>
-                          <td class="px-12 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.packs} packs
-                          </td>
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.goods_price} cfa
-                            <br />
-                          </td>
-                          <td class="px-8 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
->>>>>>> 545eb86b (first commit)
                             <Chip
                               color="teal"
                               value={`${item.delivery_day}/ ${item.delivery_hours} H`}
                             />
                           </td>
-<<<<<<< HEAD
                           <td class="px-16 py-4 text-sm text-gray-500  whitespace-nowrap">
                             {item.totalCost === undefined ||
                             item.totalCost === "" ? (
-=======
-                          <td class="px-16 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                            {item.totalCost === undefined ? (
->>>>>>> 545eb86b (first commit)
                               <Chip
                                 variant="ghost"
                                 color="red"
@@ -417,15 +305,11 @@ export default function AdminTable() {
                               </Button>
 
                               <Button
-<<<<<<< HEAD
                                 className={
                                   item.status && item.invoiceStatus === true
                                     ? "hidden"
                                     : "flex items-center"
                                 }
-=======
-                                className="flex items-center"
->>>>>>> 545eb86b (first commit)
                                 size="sm"
                                 onClick={() => {
                                   handleUpdate(

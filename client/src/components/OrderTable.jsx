@@ -12,11 +12,7 @@ function OrderTable() {
   const [originalData, setOriginalData] = useState([]);
 
   useEffect(() => {
-<<<<<<< HEAD
     fetch(`${process.env.REACT_APP_API_URL}/order/`)
-=======
-    fetch("http://localhost:4000/order/")
->>>>>>> 545eb86b (first commit)
       .then((data) => data.json())
       .then((data) => {
         setData(data);
@@ -85,11 +81,7 @@ function OrderTable() {
 
   return (
     <>
-<<<<<<< HEAD
       <div className="w-full  h-[100vh] sm:px-6 py-12">
-=======
-      <div className="w-full sm:px-6 py-12">
->>>>>>> 545eb86b (first commit)
         <div className="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
           <div className="sm:flex items-center justify-between" id="tabSearch">
             <div className="flex sm:flex-col flex-col">
@@ -190,11 +182,7 @@ function OrderTable() {
                         {item.recipient && item.recipient.name}
                       </p>
                       <p className="text-xs leading-3 text-gray-600 mt-2">
-<<<<<<< HEAD
                         {item.recipient && item.recipient.phone}
-=======
-                        { item.recipient &&  item.recipient.phone}
->>>>>>> 545eb86b (first commit)
                       </p>
                     </td>
                     <td className="pl-16">

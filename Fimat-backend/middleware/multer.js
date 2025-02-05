@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-//Multer Config for user signup function
->>>>>>> 545eb86b (first commit)
 const multer = require("multer");
 
 /* const storage = multer.diskStorage({

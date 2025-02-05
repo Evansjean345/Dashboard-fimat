@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@emailjs/browser": "^3.11.0",
-=======
->>>>>>> 545eb86b (first commit)
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^1.4.2",
     "@testing-library/jest-dom": "^5.16.5",

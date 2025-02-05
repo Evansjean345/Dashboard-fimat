@@ -10,11 +10,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     axios
-<<<<<<< HEAD
       .get(`${process.env.REACT_APP_API_URL}/order/${id}`)
-=======
-      .get(`http://localhost:4000/order/${id}`)
->>>>>>> 545eb86b (first commit)
       .then((res) => setOrder(res.data));
   }, [id]);
 
@@ -30,10 +26,7 @@ const OrderDetails = () => {
     reception,
     delivery_day,
     delivery_hours,
-<<<<<<< HEAD
     user,
-=======
->>>>>>> 545eb86b (first commit)
   } = order;
 
   return (
@@ -51,7 +44,6 @@ const OrderDetails = () => {
             <div className="w-1/2 border border-black px-2 py-4">
               {" "}
               <h3>Destinataire</h3>
-<<<<<<< HEAD
               <p className="mt-2">
                 nom du destinataire: {recipient && recipient.name} 
               </p>
@@ -82,25 +74,6 @@ const OrderDetails = () => {
               </p>
               <p className="mt-1">Destination: {destination}</p>
               <p className="mt-1">Total Cost: {totalCost}</p>
-=======
-              <p>nom du destinataire: {recipient && recipient.name}</p>
-              <p>numéro du destinataire: {recipient && recipient.phone}</p>
-              <p>adresse du destinataire: {recipient && recipient.address}</p>
-              <p>Coût Total: {totalCost}</p>
-            </div>
-            <div className="w-1/2 border border-black px-2 py-4">
-              <h3>Details de la facture</h3>
-              <p>numero de la commande: {tracking}</p>
-              <p>date de la commande: {date}</p>
-              <p>moyen de paiyement: {payement}</p>
-              <p>Prix de la marchandise : {goods_price}</p>
-              <p>Lieu de reception du colis : {reception}</p>
-              <p>
-                Jour et heure de livraison : {delivery_day} / {delivery_hours} h
-              </p>
-              <p>Destination: {destination}</p>
-              <p>Total Cost: {totalCost}</p>
->>>>>>> 545eb86b (first commit)
             </div>
             {orderUrl === null ? (
               <img

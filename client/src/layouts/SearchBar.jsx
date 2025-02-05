@@ -7,31 +7,19 @@ export default function SearchBar() {
 
   useEffect(() => {
     const fetchOrder = () => {
-<<<<<<< HEAD
       fetch(`${process.env.REACT_APP_API_URL}/order`)
-=======
-      fetch("http://localhost:4000/order")
->>>>>>> 545eb86b (first commit)
         .then((res) => res.json())
         .then((res) => setData(res));
     };
     fetchOrder();
   }, []);
 
-<<<<<<< HEAD
-=======
-  console.log("data", data);
->>>>>>> 545eb86b (first commit)
 
   const onChange = (event) => {
     setValue(event.target.value);
   };
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
-<<<<<<< HEAD
-=======
-    console.log("search", searchTerm);
->>>>>>> 545eb86b (first commit)
   };
 
   return (

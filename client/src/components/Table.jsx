@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../layouts/SearchBar";
 import { CardFooter, Button, IconButton, Chip } from "@material-tailwind/react";
-<<<<<<< HEAD
 import axios from "axios";
-=======
->>>>>>> 545eb86b (first commit)
 
 function Table() {
   const [data, setData] = useState([]);
@@ -13,11 +10,7 @@ function Table() {
 
   useEffect(() => {
     function PerPage() {
-<<<<<<< HEAD
       fetch(`${process.env.REACT_APP_API_URL}/order/`)
-=======
-      fetch("http://localhost:4000/order/")
->>>>>>> 545eb86b (first commit)
         .then((data) => data.json())
         .then((data) => setData(data))
         .catch((error) => setData(error));
@@ -142,12 +135,9 @@ function Table() {
                   Destinataire
                 </th>
                 <th className="font-semibold font-mono text-left pl-20">
-<<<<<<< HEAD
                   Expéditeur
                 </th>
                 <th className="font-semibold font-mono text-left pl-20">
-=======
->>>>>>> 545eb86b (first commit)
                   Status
                 </th>
                 <th className="font-semibold font-mono text-left pl-20">
@@ -194,7 +184,6 @@ function Table() {
                     </div>
                   </td>
                   <td className="pl-20">
-<<<<<<< HEAD
                     <p className="font-medium">
                       {item.recipient && item.recipient.name}
                     </p>
@@ -210,11 +199,6 @@ function Table() {
                     </p>
                     <p className="text-xs leading-3 font-medium text-gray-600 mt-2">
                       {item.user && item.user.phone}
-=======
-                    <p className="font-medium">{item.recipient.name}</p>
-                    <p className="text-xs leading-3 font-medium text-gray-600 mt-2">
-                      {item.recipient.phone}
->>>>>>> 545eb86b (first commit)
                     </p>
                   </td>
                   <td className="pl-16">
@@ -237,11 +221,7 @@ function Table() {
                   </td>
                   <td className="pl-20">
                     <p className="font-medium">
-<<<<<<< HEAD
                       {item.totalCost === undefined || item.totalCost === "" ? (
-=======
-                      {item.totalCost === undefined ? (
->>>>>>> 545eb86b (first commit)
                         <Chip
                           variant="ghost"
                           color="red"

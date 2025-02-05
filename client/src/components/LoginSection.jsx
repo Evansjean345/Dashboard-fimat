@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { AuthContext } from "../services/account.service";
 import { Link, useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import {
   Input,
   Button,
@@ -26,10 +25,6 @@ export default function LoginSection() {
   };
   const handleError = () => setError(!error);
   //auth
-=======
-
-export default function LoginSection() {
->>>>>>> 545eb86b (first commit)
   const { login, isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -38,18 +33,11 @@ export default function LoginSection() {
   });
 
   const handleSubmit = async (e) => {
-<<<<<<< HEAD
     handleOpen();
     e.preventDefault();
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/user/login`,
-=======
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:4000/user/login",
->>>>>>> 545eb86b (first commit)
         formData
       );
       const token = response.data.token;
@@ -58,10 +46,7 @@ export default function LoginSection() {
       login({ userId, token });
     } catch (error) {
       console.log(error);
-<<<<<<< HEAD
       handleError();
-=======
->>>>>>> 545eb86b (first commit)
     }
     if (isAuthenticated()) {
       navigate("/");
@@ -77,21 +62,12 @@ export default function LoginSection() {
 
   return (
     <>
-<<<<<<< HEAD
       <div class="bg-white">
         <div class="flex justify-center h-screen">
           <div
             class="hidden bg-cover   lg:block lg:w-2/3"
             style={{
               backgroundImage: `url(/images/user.png)`,
-=======
-      <div class="bg-white dark:bg-gray-900">
-        <div class="flex justify-center h-screen">
-          <div
-            class="hidden bg-cover  lg:block lg:w-2/3"
-            style={{
-              backgroundImage: `url(https://images.unsplash.com/photo-1513672494107-cd9d848a383e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80`,
->>>>>>> 545eb86b (first commit)
             }}
           >
             <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
@@ -122,11 +98,7 @@ export default function LoginSection() {
                   />
                 </div>
 
-<<<<<<< HEAD
                 <p class="mt-3 text-gray-500">
-=======
-                <p class="mt-3 text-gray-500 dark:text-gray-300">
->>>>>>> 545eb86b (first commit)
                   Enregistrez vous pour accédez à votre compte
                 </p>
               </div>
@@ -136,11 +108,7 @@ export default function LoginSection() {
                   <div>
                     <label
                       for="username"
-<<<<<<< HEAD
                       class="block mb-2 text-sm text-gray-600"
-=======
-                      class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
->>>>>>> 545eb86b (first commit)
                     >
                       Nom d'utilisateur
                     </label>
@@ -151,11 +119,7 @@ export default function LoginSection() {
                       placeholder="....."
                       value={formData.username}
                       onChange={handleChange}
-<<<<<<< HEAD
                       class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring focus:ring-opacity-40"
-=======
-                      class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
->>>>>>> 545eb86b (first commit)
                     />
                   </div>
 
@@ -163,29 +127,17 @@ export default function LoginSection() {
                     <div class="flex justify-between mb-2">
                       <label
                         for="password"
-<<<<<<< HEAD
                         class="text-sm text-gray-600"
                       >
                         Mot de passe
                       </label>
                       {/*
                         <a
-=======
-                        class="text-sm text-gray-600 dark:text-gray-200"
-                      >
-                        Mot de passe
-                      </label>
-                      <a
->>>>>>> 545eb86b (first commit)
                         href="#"
                         class="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline"
                       >
                         oublié
-<<<<<<< HEAD
                       </a> */}
-=======
-                      </a>
->>>>>>> 545eb86b (first commit)
                     </div>
 
                     <input
@@ -195,7 +147,6 @@ export default function LoginSection() {
                       placeholder="Mot de passe"
                       value={formData.password}
                       onChange={handleChange}
-<<<<<<< HEAD
                       class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:outline-none focus:ring focus:ring-opacity-40"
                     />
                   </div>
@@ -227,27 +178,6 @@ export default function LoginSection() {
                     to="/signup/user"
                     class="text-[#db6013] focus:outline-none focus:underline hover:underline"
                   >
-=======
-                      class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                  </div>
-
-                  <div class="mt-6">
-                    <button
-                      type="submit"
-                      class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-[#db6013] rounded-lg hover:bg-[#ba571a] focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                    >
-                      Se connceter
-                    </button>
-                  </div>
-                </form>
-
-                <p class="mt-6 text-sm text-center text-gray-400">
-                  &#x27; Vous n'avez pas de compte{" "}
-                  <Link
-                  to="/signup/user"
-                   class="text-[#db6013] focus:outline-none focus:underline hover:underline">
->>>>>>> 545eb86b (first commit)
                     S'enregistrer
                   </Link>
                   .
@@ -257,7 +187,6 @@ export default function LoginSection() {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       {/* commande refusée*/}
       <Dialog open={error} handler={handleError} size="xl">
         <DialogHeader>Erreur de connexion</DialogHeader>
@@ -271,8 +200,6 @@ export default function LoginSection() {
           </Button>
         </DialogFooter>
       </Dialog>
-=======
->>>>>>> 545eb86b (first commit)
     </>
   );
 }

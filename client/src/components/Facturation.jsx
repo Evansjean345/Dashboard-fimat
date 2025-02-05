@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-<<<<<<< HEAD
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
 import {
@@ -12,17 +11,10 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
-=======
-import { Link, useParams } from "react-router-dom";
-import Navbar from "../layouts/Navbar";
-import { Formik } from "formik";
-
->>>>>>> 545eb86b (first commit)
 export default function Facturation() {
   const { id } = useParams();
   const [order, setOrder] = useState({});
   const [totalCost, setTotalCost] = useState("");
-<<<<<<< HEAD
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -31,12 +23,6 @@ export default function Facturation() {
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/order/${id}`)
-=======
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:4000/order/${id}`)
->>>>>>> 545eb86b (first commit)
       .then((res) => setOrder(res.data));
   }, [id]);
 
@@ -46,16 +32,10 @@ export default function Facturation() {
       totalCost: totalCost,
     };
     axios
-<<<<<<< HEAD
       .put(`https://fimat-group-api.onrender.com/order/${id}`, data)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     handleOpen();
-=======
-      .put(`http://localhost:4000/order/${id}`, data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
->>>>>>> 545eb86b (first commit)
   };
 
   console.log(order);
@@ -274,7 +254,6 @@ export default function Facturation() {
                     </div>
                   </div>
                 </div>
-<<<<<<< HEAD
                 <form>
                   <div class="mt-16 lg:flex justify-between border-b border-gray-200 pb-16 mb-4">
                     <div class="w-80">
@@ -361,104 +340,11 @@ export default function Facturation() {
                     </div>
                   </div>
                 </form>
-=======
-                <Formik>
-                  {({ errors, touched, isSubmitting }) => (
-                    <form>
-                      <div class="mt-16 lg:flex justify-between border-b border-gray-200 pb-16 mb-4">
-                        <div class="w-80">
-                          <div class="flex items-center">
-                            <h1 class="text-xl font-medium pr-2 leading-5 text-gray-800">
-                              Facture
-                            </h1>
-                          </div>
-                          <p class="mt-4 text-sm leading-5 text-gray-600">
-                            Fixer le montant de la commande
-                          </p>
-                        </div>
-                        <div>
-                          <div class="md:flex items-center lg:ml-24 lg:mt-0 mt-4">
-                            <div class="md:w-64">
-                              <label
-                                class="text-sm leading-none text-gray-800"
-                                id="totalCost"
-                              >
-                                Coût Total
-                              </label>
-                              {order.totalCost === undefined ? (
-                                <input
-                                  type="text"
-                                  name="totalCost"
-                                  placeholder={
-                                    order.totalCost === undefined
-                                      ? "fixer le prix "
-                                      : order.totalCost
-                                  }
-                                  onChange={(e) => {
-                                    setTotalCost(e.target.value);
-                                  }}
-                                  className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
-                                />
-                              ) : (
-                                <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
-                                  {order.totalCost}
-                                </div>
-                              )}
-                            </div>
-                            <div class="md:w-64 md:ml-12 md:mt-0 mt-4">
-                              <label
-                                class="text-sm leading-none text-gray-800"
-                                id="transport"
-                              >
-                                Statut de la commande
-                              </label>
-                              <div className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800">
-                                {order.status === false ? (
-                                  <div className="text-red-600 font-bold">
-                                    en attente de facturation
-                                  </div>
-                                ) : (
-                                  <div className="text-green-600 font-bold">
-                                    Facturé réglée
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                          <div class="md:flex items-center lg:ml-24 mt-8">
-                            <div class="md:w-64">
-                              <div
-                                onClick={() => {
-                                  updateOrder();
-                                  window.location.reload();
-                                }}
-                                className="w-full bg-indigo-700 hover:bg-white hover:scale-75 cursor-pointer hover:text-indigo-700 hover:border hover:border-indigo-700 transition-all p-3 mt-3 text-white border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none"
-                              >
-                                <button>soummettre</button>
-                              </div>
-                            </div>
-                            <div class="md:w-64 md:ml-12 md:mt-0 mt-4">
-                              <div className="w-full p-3 mt-3 cursor-pointer hover:text-gray-900 transition-all bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-blue-600">
-                                <Link
-                                  to={`/dashboard/admin/order/details/${id}`}
-                                >
-                                  {order.tracking}
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  )}
-                </Formik>
->>>>>>> 545eb86b (first commit)
               </div>
             </div>
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       <Dialog open={open} handler={handleOpen} size="xl">
         <DialogHeader>Le Coût Total a bien été enregistré</DialogHeader>
         <DialogBody divider className="text-semibold">
@@ -479,8 +365,6 @@ export default function Facturation() {
           </Link>
         </DialogFooter>
       </Dialog>
-=======
->>>>>>> 545eb86b (first commit)
     </>
   );
 }

@@ -12,7 +12,6 @@ import { Field, Formik } from "formik";
 import "../App.css";
 import axios from "axios";
 import { AuthContext } from "../services/account.service";
-<<<<<<< HEAD
 import Loader from "../utils/Loader";
 
 export default function Order() {
@@ -26,10 +25,6 @@ export default function Order() {
     }, 7000);
   };
 
-=======
-
-export default function Order() {
->>>>>>> 545eb86b (first commit)
   ///userId information
   const { getUserInfo } = useContext(AuthContext);
   const [user, setUser] = useState(null);
@@ -164,11 +159,7 @@ export default function Order() {
     console.log("formuser", user);
 
     axios
-<<<<<<< HEAD
       .post(`${process.env.REACT_APP_API_URL}/order/`, formData)
-=======
-      .post("http://localhost:4000/order/", formData)
->>>>>>> 545eb86b (first commit)
       .then((res) => {
         console.log(res);
         handleOpen();
@@ -179,10 +170,7 @@ export default function Order() {
       });
 
     console.log(formData);
-<<<<<<< HEAD
     handleLoader();
-=======
->>>>>>> 545eb86b (first commit)
   };
 
   const selectedTime = new Date();
@@ -639,7 +627,6 @@ export default function Order() {
                       </div>
                       {date && (
                         <div className="w-3/4 sm:flex sm:flex-row flex-col h-2 sm:px-24 px-10 font-semibold  sm:py-16 py-8 ">
-<<<<<<< HEAD
                           <div className="hidden sm:block py-4 sm:py-0">
                             {" "}
                             Touchez l'icône du calendrier pour choisr la date :
@@ -648,12 +635,6 @@ export default function Order() {
                             {" "}
                             Touchez la case ci dessous pour choisir une date
                           </div>
-=======
-                          <div className="py-4 sm:py-0">
-                            {" "}
-                            Touchez l'icône du calendrier pour choisr la date :
-                          </div>
->>>>>>> 545eb86b (first commit)
                           <Input
                             type="date"
                             variant="outlined"
@@ -727,11 +708,7 @@ export default function Order() {
                             className={
                               pay1
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all object-cover"
-<<<<<<< HEAD
                                 : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl sm:hover:scale-75  focus:scale-75 transition-all object-cover"
-=======
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
->>>>>>> 545eb86b (first commit)
                             }
                             onClick={() => {
                               handlePayementChange("MOOV-africa");
@@ -748,11 +725,7 @@ export default function Order() {
                             className={
                               pay2
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all object-cover"
-<<<<<<< HEAD
                                 : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl sm:hover:scale-75  focus:scale-75 transition-all object-cover"
-=======
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
->>>>>>> 545eb86b (first commit)
                             }
                             onClick={() => {
                               handlePayementChange("MTN-momo");
@@ -769,11 +742,7 @@ export default function Order() {
                             className={
                               pay3
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all object-cover"
-<<<<<<< HEAD
                                 : "h-[48px] w-[119px]  cursor-pointer sm:hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
-=======
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all object-cover"
->>>>>>> 545eb86b (first commit)
                             }
                             onClick={() => {
                               handlePayementChange("ORANGE-money");
@@ -790,11 +759,7 @@ export default function Order() {
                             className={
                               pay4
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl  focus:scale-75 transition-all "
-<<<<<<< HEAD
                                 : "h-[48px] w-[119px]  cursor-pointer sm:hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
-=======
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
->>>>>>> 545eb86b (first commit)
                             }
                             onClick={() => {
                               handlePayementChange("GTBank");
@@ -811,11 +776,7 @@ export default function Order() {
                             className={
                               pay5
                                 ? "h-[48px] w-[119px]  cursor-pointer shadow-2xl scale-75 hover:shadow-2xl focus:scale-75 transition-all"
-<<<<<<< HEAD
                                 : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl sm:hover:scale-75  focus:scale-75 transition-all"
-=======
-                                : "h-[48px] w-[119px]  cursor-pointer hover:shadow-2xl hover:scale-75  focus:scale-75 transition-all"
->>>>>>> 545eb86b (first commit)
                             }
                             onClick={() => {
                               handlePayementChange("à-la-Livraison");
@@ -855,7 +816,6 @@ export default function Order() {
                     </div>
                   </div>
                   {/* Soumission */}
-<<<<<<< HEAD
                   {loader ? (
                     <div
                       className="w-72 flex items-center justify-center h-4 px-4 py-8
@@ -872,15 +832,6 @@ export default function Order() {
                       Passer la commande
                     </button>
                   )}
-=======
-                  <button
-                    type="button"
-                    onClick={changeOnclick}
-                    className="mt-8 hover:bg-gray-200 hover:text-[#db6013] cursor-pointer transition-all hover:scale-95 hover:border-[#db6013] hover:border-2 w-44 h-14 rounded-lg font-semibold text-white bg-[#db6013] flex items-center justify-center"
-                  >
-                    Passer la commande
-                  </button>
->>>>>>> 545eb86b (first commit)
                 </form>
               )}
             </Formik>
@@ -888,11 +839,7 @@ export default function Order() {
         </div>
       </div>
       {/* commande confirmée */}
-<<<<<<< HEAD
       <Dialog open={open} handler={handleOpen} size="xl">
-=======
-      <Dialog open={open} handler={handleOpen}>
->>>>>>> 545eb86b (first commit)
         <DialogHeader>Votre commande a bien été enregistrée</DialogHeader>
         <DialogBody divider className="text-semibold">
           Merci pour votre confiance l'equipe Chapchrono vous remercie pour
@@ -912,11 +859,7 @@ export default function Order() {
         </DialogFooter>
       </Dialog>
       {/* commande refusée*/}
-<<<<<<< HEAD
       <Dialog open={error} handler={handleError} size="xl">
-=======
-      <Dialog open={error} handler={handleError}>
->>>>>>> 545eb86b (first commit)
         <DialogHeader>Nous ne pouvons traitez votre commande</DialogHeader>
         <DialogBody divider className="text-semibold">
           Veuillez renseigner tous les champs avant de pouvoir passer une

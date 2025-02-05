@@ -1,9 +1,5 @@
 const User = require("../models/user");
-<<<<<<< HEAD
 const bcrypt = require("bcryptjs");
-=======
-const bcrypt = require("bcrypt");
->>>>>>> 545eb86b (first commit)
 const jwt = require("jsonwebtoken");
 const ObjectID = require("mongoose").Types.ObjectId;
 const fs = require("fs");
@@ -32,10 +28,7 @@ exports.signup = async (req, res) => {
       email: req.body.email,
       password: hash,
       imgUrl: file,
-<<<<<<< HEAD
       isAdmin: req.body.isAdmin === "true",
-=======
->>>>>>> 545eb86b (first commit)
       date: new Date().toUTCString(),
     });
     admin
@@ -186,18 +179,10 @@ exports.getOrderByUser = (req, res) => {
       .populate({
         path: "orders",
         options: {
-<<<<<<< HEAD
           sort: { $natural: -1 },
         },
       })
       .then((order) => res.status(200).json(order))
       .catch((error) => res.status(400).json(`ID unknown : ${error}`));
-=======
-          sort: { $natural : -1},
-        },
-      })
-      .then((order) => res.status(200).json(order))
-      .catch((error) => res.status(400).json(`ID unknow : ${error}`));
->>>>>>> 545eb86b (first commit)
   }
 };

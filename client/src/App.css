@@ -1,5 +1,4 @@
 @media (width >= 1550px) {
-<<<<<<< HEAD
   #Main {
     width: 330px;
   }
@@ -114,37 +113,4 @@
   -o-transform-origin: 0 0;
   -webkit-transform: scale(1);
   -webkit-transform-origin: 0 0;
-=======
-    #Main{
-        width: 330px;
-    }
-    #logo-no-text{
-        width: 124px;
-    }
-    #avatar{
-        padding-right: 54px;
-        padding-left: 54px;
-    }
-}
-@media (width >= 1960px) {
-    #Main{
-        width: 380px;
-    }
-}
-
-@media (width <= 820px) and (width >= 640px) {
-    #tabSearch{
-        display: block;
-    }
-}
-
-@media (width <= 1640px ) and (width >= 1280px) {
-    #edit{
-        padding-left: 76px;
-    }
-}
-
-#range{
-    --progress-color: #00c853;
->>>>>>> 545eb86b (first commit)
 }

@@ -25,11 +25,7 @@ export default function Navbar() {
   return (
     <div className="z-50 fixed w-full">
       {/* Nav version mobile */}
-<<<<<<< HEAD
       <div className="bg-[#4D148C] h-full  rounded-r shadow xl:hidden flex justify-between w-full p-6 items-center border-b border-transparent sm:border-gray-200 ">
-=======
-      <div className="bg-[#4D148C]   rounded-r shadow xl:hidden flex justify-between w-full p-6 items-center border-b border-transparent sm:border-gray-200 ">
->>>>>>> 545eb86b (first commit)
         {/* Mobile Logo */}
         <button className="flex text-white hover:text-indigo-200 focus:outline-none focus:text-indigo-200 justify-between  items-center space-x-3">
           <svg
@@ -126,11 +122,7 @@ export default function Navbar() {
         id="Main"
         className={`${
           show ? "-translate-x-full" : "translate-x-0 "
-<<<<<<< HEAD
         } bg-[#4D148C] transform  xl:translate-x-0 shadow xl:rounded-r fixed h-[100vh] sm:h-full  top-22 sm:z-50 z-50 hover:overflow-auto  ease-in-out transition duration-500 flex justify-start items-start w-full sm:w-64 flex-col px-0 pb-24 sm:pb-0`}
-=======
-        } bg-[#4D148C] transform  xl:translate-x-0 shadow xl:rounded-r fixed h-full  top-22 sm:z-50 z-50 hover:overflow-auto  ease-in-out transition duration-500 flex justify-start items-start w-full sm:w-64 flex-col px-0 pb-24 sm:pb-0`}
->>>>>>> 545eb86b (first commit)
       >
         <button className="hidden focus:outline-none hover:text-indigo-200 focus:text-indigo-200 text-white sm:flex justify-start p-6 items-center space-x-0  w-full">
           <img
